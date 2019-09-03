@@ -56,5 +56,5 @@ function prompt_command {
 
 export PROMPT_COMMAND=prompt_command
 
-test -f .bashrc_work && source .bashrc_work
-test -f .bashrc_home && source .bashrc_home
+test -f ~/.bashrc_work && source ~/.bashrc_work || true
+test -f ~/.bashrc_home && source ~/.bashrc_home || true
