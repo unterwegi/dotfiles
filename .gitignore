@@ -1,0 +1,9 @@
+# ignore everything at first
+*
+# allow the .gitignore itself
+!.gitignore
+# any file mentioned here will be tracked
+!.bashrc
+!.profile
+!.tmux.conf
+!.vimrc
