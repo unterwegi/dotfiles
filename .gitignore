@@ -6,4 +6,6 @@
 !.bashrc
 !.profile
 !.tmux.conf
+!.tmux.current.conf
+!.tmux.legacy.conf
 !.vimrc
