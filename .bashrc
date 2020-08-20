@@ -4,6 +4,7 @@
 export PATH="$PATH:~/bin"
 
 # my aliases
+alias ls="ls --color"
 alias ll="ls -la"
 
 # git aliases
