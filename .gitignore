@@ -8,4 +8,5 @@
 !.tmux.conf
 !.tmux.current.conf
 !.tmux.legacy.conf
+!.trueline.sh
 !.vimrc
