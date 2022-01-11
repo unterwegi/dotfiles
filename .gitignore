@@ -4,6 +4,7 @@
 !.gitignore
 # any file mentioned here will be tracked
 !.bashrc
+!.bootstrap.sh
 !.profile
 !.tmux.conf
 !.tmux.current.conf
