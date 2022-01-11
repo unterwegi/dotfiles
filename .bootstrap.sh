@@ -9,3 +9,4 @@ cd "$font_dir" || exit
 
 unzip CascadiaCode.zip
 rm CascadiaCode.zip
+fc-cache -v
