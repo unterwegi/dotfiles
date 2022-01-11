@@ -25,7 +25,7 @@ export VISUAL=$EDITOR
 export TRUELINE_USER_ALWAYS_SHOW_HOSTNAME=true
 export TRUELINE_USER_SHORTEN_HOSTNAME=true
 declare -a TRUELINE_SEGMENTS=(
-    'user,mono,light_blue,bold'
+    'user,black,light_blue,normal'
     'aws_profile,black,purple,normal'
     'venv,black,green,normal'
     'conda_env,black,green,normal'
