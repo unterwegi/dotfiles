@@ -25,6 +25,11 @@ if bash --version | head -n 1 | egrep -v '(version 2|version 3)' > /dev/null 2>&
     # trueline based prompt only works when at least bash v4 is available
     export TRUELINE_USER_ALWAYS_SHOW_HOSTNAME=true
     export TRUELINE_USER_SHORTEN_HOSTNAME=true
+
+    declare -A TRUELINE_SYMBOLS=(
+        [segment_separator]=''
+    )
+
     declare -a TRUELINE_SEGMENTS=(
         'user,black,light_blue,normal'
         'aws_profile,black,purple,normal'
@@ -37,6 +42,7 @@ if bash --version | head -n 1 | egrep -v '(version 2|version 3)' > /dev/null 2>&
         'exit_status,black,red,bold'
         'newline,black,green,bold'
     )
+
     source ~/.trueline.sh
 fi
 
