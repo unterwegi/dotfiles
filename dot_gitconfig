@@ -1,0 +1,5 @@
+[user]
+	email = ingo.unterwegi@gmail.com
+	name = Ingo Unterweger
+[pull]
+	rebase = false

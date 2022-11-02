@@ -1,0 +1,4 @@
+README.md
+{{- if ne .chezmoi.hostname "normandy-linux" }}
+.gitconfig
+{{- end }}
