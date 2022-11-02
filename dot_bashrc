@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # path
-export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 
 # my aliases
 alias ls="ls --color"
