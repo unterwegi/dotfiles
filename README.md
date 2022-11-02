@@ -2,23 +2,21 @@
 
 ## Bootstrap
 
-```bash
-cd $HOME
-git init .
-# don't forget to add SSH Key in https://github.com/settings/keys
-git remote add origin git@github.com:unterwegi/dotfiles.git
-# HTTPS pull in case SSH is not possible; create token beforehand via https://github.com/settings/tokens
-git remote add origin https://github.com/unterwegi/dotfiles.git
-git fetch
-git checkout -f master
-```
+Add SSH key in https://github.com/settings/keys
 
-## Terminal setup
+Install chezmoi: https://www.chezmoi.io/install/
 
 ```bash
-# Install my nerd font
-$HOME/.bootstrap.sh
+chezmoi init --ssh --apply unterwegi
 ```
+
+### One Liner
+
+```bash
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply unterwegi
+```
+
+## Terminal Setup
 
 "Solarized Dark Custom" color palette example (taken from a xfce4 terminalrc):
 
