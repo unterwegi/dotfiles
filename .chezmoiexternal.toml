@@ -1,0 +1,4 @@
+[".trueline.sh"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/petobens/trueline/master/trueline.sh"
+    refreshPeriod = "168h"
