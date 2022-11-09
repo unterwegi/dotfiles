@@ -1,8 +1,3 @@
-
--- Leader setup
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
-
 -- global settings
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
@@ -12,12 +7,16 @@ vim.o.modeline = true
 vim.o.syntax = "on"
 vim.o.termguicolors = true 
 vim.o.errorbells = false
-vim.o.smartindent = true
 vim.o.smartcase = true
-vim.o.autoindent = true
+vim.o.incsearch = true
+vim.o.hidden = true
+vim.o.completeopt="menuone,noinsert,noselect"
+vim.bo.smartindent = true
+vim.bo.autoindent = true
 
 vim.bo.swapfile = false
 vim.o.undofile = true
+vim.o.backup = false
 
 vim.wo.number = true
 vim.wo.relativenumber = true
