@@ -28,3 +28,7 @@ ColorPalette=#070736364242;#DCDC32322F2F;#9626D47A98A4;#B5B589890000;#26268B8BD2
 FontName=CaskaydiaCove Nerd Font Mono 12
 ColorBoldIsBright=FALSE
 ```
+
+## Things to do
+ * Google Drive Sync Setup (continous local sync when network is up)
+ * finish nvim setup (telescope, language servers, ...)
