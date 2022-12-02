@@ -1,0 +1,13 @@
+{{ if .driveSync -}}
+#!/bin/bash
+
+SYNC_DIR="$HOME/GoogleDrive"
+
+mkdir -p "$SYNC_DIR"
+
+# check to see if there is a connection by pinging a Google server
+if ping -q -c 1 -W 1 googleapis.com >/dev/null; then
+    # if we are connected, try a sync
+    rclone sync -uv --exclude-from $HOME/.config/rclone/gdrive-exclude.txt gdrive: $SYNC_DIR
+fi
+{{ end -}}

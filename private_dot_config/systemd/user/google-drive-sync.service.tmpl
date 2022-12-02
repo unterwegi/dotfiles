@@ -1,0 +1,10 @@
+{{ if .driveSync -}}
+[Unit]
+Description=Google Drive sync over rclone
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/gdrive-sync
+TimeoutSec=12h
+{{ end -}}

@@ -1,0 +1,24 @@
+{{ if .driveSync -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+echo -e "\033[0;32m>>>>> Begin Setting Up Google Drive Sync <<<<<\033[0m"
+if grep -q gdrive "$HOME/.config/rclone/rclone.conf"; then
+    echo "rclone already configured, nothing to do!"
+else
+    echo "creating rclone remote 'gdrive' ..."
+    rclone config create gdrive drive scope=drive
+fi
+
+if systemctl --user is-enabled google-drive-sync.timer > /dev/null; then
+    echo "systemd timer for periodic sync already enabled!"
+else
+    echo "enabling systemd google-drive-sync.timer unit in user scope ..."
+    systemctl --user daemon-reload
+    systemctl --user enable google-drive-sync.timer
+    systemctl --user start google-drive-sync.timer
+fi
+
+echo -e "\033[0;32m>>>>> Finish Setting Up Google Drive Sync <<<<<\033[0m"
+{{ end -}}

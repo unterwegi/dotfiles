@@ -1,0 +1,12 @@
+{{ if .driveSync -}}
+[Unit]
+Description=Timer for Google Drive sync
+
+[Timer]
+# Start first sync 5 minutes after login and then 5 minutes after each sync
+OnStartupSec=300
+OnUnitInactiveSec=300
+
+[Install]
+WantedBy=timers.target
+{{ end -}}

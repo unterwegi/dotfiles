@@ -1,4 +1,6 @@
 {{- $email := promptStringOnce . "email" "Email address" "ingo.unterwegi@gmail.com" -}}
+{{- $driveSync := promptBoolOnce . "driveSync" "Sync Google Drive" true -}}
 
 [data]
     email = {{ $email | quote }}
+    driveSync = {{ $driveSync }}
