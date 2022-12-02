@@ -30,5 +30,4 @@ ColorBoldIsBright=FALSE
 ```
 
 ## Things to do
- * Google Drive Sync Setup (continous local sync when network is up)
  * finish nvim setup (telescope, language servers, ...)
