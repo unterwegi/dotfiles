@@ -16,6 +16,12 @@ chezmoi init --ssh --apply unterwegi
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply unterwegi
 ```
 
+## Necessary software to install beforehenad
+
+* git
+* ripgrep (https://github.com/BurntSushi/ripgrep)
+* neovim (https://github.com/neovim/neovim/wiki/Installing-Neovim)
+
 ## Terminal Setup
 
 "Solarized Dark Custom" color palette example (taken from a xfce4 terminalrc):

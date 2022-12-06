@@ -28,6 +28,17 @@ packer.startup({
             end
         }
 
+        -- Telescope
+        use "natecraddock/telescope-zf-native.nvim"
+        use {
+            "nvim-telescope/telescope.nvim",
+            branch = "0.1.x",
+            requires = { "nvim-lua/plenary.nvim" },
+            config = function()
+                require("telescope").load_extension("zf-native")
+            end
+        }
+
         -- Lifehacks
         use {
             "max397574/better-escape.nvim",
