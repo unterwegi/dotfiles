@@ -39,6 +39,31 @@ packer.startup({
             end
         }
 
+        -- LSP
+        use {
+          "neovim/nvim-lspconfig",
+          requires = {
+            "b0o/schemastore.nvim",
+            "ray-x/lsp_signature.nvim",
+            "lewis6991/gitsigns.nvim",
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig",
+            "jose-elias-alvarez/null-ls.nvim",
+            "nvim-lua/plenary.nvim",
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+          },
+          config = function()
+            require("configs._lspconfig")
+          end
+        }
+        use {
+          "nvim-treesitter/nvim-treesitter",
+          run = ":TSUpdate",
+          config = function()
+            require("configs._treesitter")
+          end
+        }
+
         -- Lifehacks
         use {
             "max397574/better-escape.nvim",
