@@ -64,6 +64,15 @@ packer.startup({
           end
         }
 
+        use {
+          "folke/trouble.nvim",
+          opt = true,
+          event = "BufReadPost",
+          config = function()
+            require("trouble").setup()
+          end
+        }
+
         -- Lifehacks
         use {
             "max397574/better-escape.nvim",

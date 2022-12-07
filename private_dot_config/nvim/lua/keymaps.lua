@@ -52,3 +52,7 @@ keymap.set("n", "fg", builtin.live_grep, { desc = "Grep in Files" })
 keymap.set("n", "fs", builtin.grep_string, { desc = "Find String in Files" })
 keymap.set("n", "fb", builtin.buffers, { desc = "Find Buffers" })
 keymap.set("n", "fh", builtin.help_tags, { desc = "Show Help Tags" })
+
+-- Trouble
+keymap.set("n", "<Leader>xx", ":TroubleToggle<CR>")
+keymap.set("n", "<Leader>xr", ":TroubleToggle lsp_references<CR>")
