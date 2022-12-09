@@ -14,6 +14,7 @@ packer.startup({
 
         -- Look and Feel
         use "EdenEast/nightfox.nvim"
+        use "stevearc/dressing.nvim"
         use {
             "nvim-lualine/lualine.nvim",
             requires = { "kyazdani42/nvim-web-devicons" },
