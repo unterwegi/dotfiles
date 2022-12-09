@@ -36,11 +36,21 @@ require('mason-tool-installer').setup {
     'yamllint',
 
     -- languages
-    'jedi-language-server',
+    'python-lsp-server',
   },
   auto_update = true,
-  run_on_start = true
+  run_on_start = false
 }
+
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'MasonToolsUpdateCompleted',
+  callback = function()
+    -- install python-lsp-server plugins for black, isort and mypy
+    vim.schedule(function()
+      vim.cmd(":PylspInstall python-lsp-black pyls-isort pylsp-mypy")
+    end)
+  end,
+})
 
 local function get_client_capabilities()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -108,10 +118,40 @@ lspconfig.jsonls.setup {
   }
 }
 
--- python (jedi)
-lspconfig.jedi_language_server.setup {
+-- python
+lspconfig.pylsp.setup {
   capabilities = capabilities,
   on_attach = on_attach,
+  settings = {
+    pylsp = {
+      configurationSources = { "flake8" },
+      plugins = {
+        black = {
+            enabled = true,
+            line_length = 120
+        },
+        flake8 = {
+            enabled = true,
+            maxLineLength = 120
+        },
+        autopep8 = {
+            enabled = false,
+        },
+        mccabe = {
+            enabled = false
+        },
+        pycodestyle = {
+            enabled = false
+        },
+        pyflakes = {
+            enabled = false
+        },
+        yapf = {
+            enabled = false
+        },
+      }
+    }
+  }
 }
 
 -- sumneko_lua

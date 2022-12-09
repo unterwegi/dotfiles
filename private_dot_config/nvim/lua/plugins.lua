@@ -1,11 +1,11 @@
 local packer = require("packer")
 
 packer.init({
-  display = {
-    open_fn = function()
-      return require("packer.util").float({ border = "single" })
-    end
-  }
+    display = {
+        open_fn = function()
+            return require("packer.util").float({ border = "single" })
+        end
+    }
 })
 
 packer.startup({
@@ -42,48 +42,56 @@ packer.startup({
 
         -- LSP
         use {
-          "neovim/nvim-lspconfig",
-          requires = {
-            "b0o/schemastore.nvim",
-            "ray-x/lsp_signature.nvim",
-            "lewis6991/gitsigns.nvim",
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig",
-            "jose-elias-alvarez/null-ls.nvim",
-            "nvim-lua/plenary.nvim",
+            "neovim/nvim-lspconfig",
+            requires = {
+                "b0o/schemastore.nvim",
+                "ray-x/lsp_signature.nvim",
+                "lewis6991/gitsigns.nvim",
+                "williamboman/mason.nvim",
+                "williamboman/mason-lspconfig",
+                "jose-elias-alvarez/null-ls.nvim",
+                "nvim-lua/plenary.nvim",
+                "WhoIsSethDaniel/mason-tool-installer.nvim",
+            },
+            config = function()
+                require("configs._lspconfig")
+            end
+        }
+        use {
             "WhoIsSethDaniel/mason-tool-installer.nvim",
-          },
-          config = function()
-            require("configs._lspconfig")
-          end
+            requires = {
+                "williamboman/mason.nvim",
+                "williamboman/mason-lspconfig",
+            },
+            run = ":MasonToolsUpdate",
         }
         use {
-          "nvim-treesitter/nvim-treesitter",
-          run = ":TSUpdate",
-          config = function()
-            require("configs._treesitter")
-          end
+            "nvim-treesitter/nvim-treesitter",
+            run = ":TSUpdate",
+            config = function()
+                require("configs._treesitter")
+            end
         }
         use {
-          "folke/trouble.nvim",
-          opt = true,
-          event = "BufReadPost",
-          config = function()
-            require("trouble").setup()
-          end
+            "folke/trouble.nvim",
+            opt = true,
+            event = "BufReadPost",
+            config = function()
+                require("trouble").setup()
+            end
         }
 
         -- Lifehacks
         use {
-          "lewis6991/gitsigns.nvim",
-          config = function()
-            require("configs._gitsigns")
-          end
+            "lewis6991/gitsigns.nvim",
+            config = function()
+                require("configs._gitsigns")
+            end
         }
         use {
             "max397574/better-escape.nvim",
             config = function()
-                require("better_escape").setup { mapping = { "jj" }}
+                require("better_escape").setup { mapping = { "jj" } }
             end
         }
         use {
