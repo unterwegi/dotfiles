@@ -67,3 +67,12 @@ keymap.set("n", "fh", builtin.help_tags, { desc = "Show Help Tags" })
 -- Trouble
 keymap.set("n", "<Leader>xx", ":TroubleToggle<CR>")
 keymap.set("n", "<Leader>xr", ":TroubleToggle lsp_references<CR>")
+
+-- Formatting
+keymap.set("n", "<Leader>pp", function()
+    return vim.lsp.buf.format()
+end, { desc = "Fix document formatting" })
+
+keymap.set("v", "<Leader>pp", function()
+    return vim.lsp.buf.range_formatting()
+end, { desc = "Fix document formatting for range" })
