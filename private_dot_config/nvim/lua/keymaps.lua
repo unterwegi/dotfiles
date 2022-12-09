@@ -58,7 +58,9 @@ keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to right split" })
 
 -- Telescope
 local builtin = require("telescope.builtin")
+local extensions = require("telescope").extensions
 keymap.set("n", "ff", builtin.find_files, { desc = "Find Files" })
+keymap.set("n", "fF", extensions.file_browser.file_browser, { desc = "File Browser" })
 keymap.set("n", "fg", builtin.live_grep, { desc = "Grep in Files" })
 keymap.set("n", "fs", builtin.grep_string, { desc = "Find String in Files" })
 keymap.set("n", "fb", builtin.buffers, { desc = "Find Buffers" })
