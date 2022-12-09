@@ -5,7 +5,7 @@ vim.o.tabstop = 4
 vim.o.expandtab = true
 vim.o.modeline = true
 vim.o.syntax = "on"
-vim.o.termguicolors = true 
+vim.o.termguicolors = true
 vim.o.errorbells = false
 vim.o.smartcase = true
 vim.o.incsearch = true
@@ -22,3 +22,6 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.signcolumn = "yes"
 vim.wo.wrap = false
+
+vim.o.splitbelow = true
+vim.o.splitright = true

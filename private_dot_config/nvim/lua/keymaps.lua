@@ -12,6 +12,7 @@ keymap.set("n", "<Leader>x", ":x<CR>", { desc = "Write and exit" })
 keymap.set("n", "<Leader>qq", ":q<CR>", { desc = "Quit" })
 keymap.set("n", "<Leader>qa", ":qa!<CR>", { desc = "Quit all!" })
 keymap.set("n", "<Leader>wq", ":wq!<CR>", { desc = "Write and quit!" })
+keymap.set("n", "<Leader>bd", ":w|:bd<CR>", { desc = "Write and delete current buffer" })
 
 -- Easier cursor movement on wrapped line
 keymap.set("n", "k", "gk")
@@ -44,6 +45,16 @@ keymap.set("n", "<Tab>", ">>", { desc = "Add indentation" })
 keymap.set("n", "<S-Tab>", "<<", { desc = "De-indentation" })
 keymap.set("v", "<Tab>", ">gv", { desc = "Add indentation" })
 keymap.set("v", "<S-Tab>", "<gv", { desc = "De-indentation" })
+
+-- Open new split
+keymap.set("n", "<Leader>u", ":new<CR>", { desc = "Open new horizontal split" })
+keymap.set("n", "<Leader>i", ":vnew<CR>", { desc = "Open new vertical split" })
+
+-- Move between splits
+keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to split above" })
+keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to split below" })
+keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to left split" })
+keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to right split" })
 
 -- Telescope
 local builtin = require("telescope.builtin")
