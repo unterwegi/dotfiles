@@ -64,7 +64,6 @@ packer.startup({
             require("configs._treesitter")
           end
         }
-
         use {
           "folke/trouble.nvim",
           opt = true,
@@ -75,6 +74,12 @@ packer.startup({
         }
 
         -- Lifehacks
+        use {
+          "lewis6991/gitsigns.nvim",
+          config = function()
+            require("configs._gitsigns")
+          end
+        }
         use {
             "max397574/better-escape.nvim",
             config = function()
