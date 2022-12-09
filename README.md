@@ -34,3 +34,6 @@ ColorPalette=#070736364242;#DCDC32322F2F;#9626D47A98A4;#B5B589890000;#26268B8BD2
 FontName=CaskaydiaCove Nerd Font Mono 12
 ColorBoldIsBright=FALSE
 ```
+
+## Open topics
+* nvim autocomplete (nvim-cmp)
