@@ -16,7 +16,7 @@ chezmoi init --ssh --apply unterwegi
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply unterwegi
 ```
 
-## Necessary software to install beforehenad
+## Necessary software to install before applying
 
 * git
 * ripgrep (https://github.com/BurntSushi/ripgrep)
