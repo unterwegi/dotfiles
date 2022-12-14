@@ -22,6 +22,10 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply unterwegi
 * ripgrep (https://github.com/BurntSushi/ripgrep)
 * neovim (https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
+## Optional software
+
+* rclone (for Google Drive sync)
+
 ## Terminal Setup
 
 "Solarized Dark Custom" color palette example (taken from a xfce4 terminalrc):
