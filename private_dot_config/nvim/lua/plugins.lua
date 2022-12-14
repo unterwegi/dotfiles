@@ -84,6 +84,27 @@ packer.startup({
             end
         }
 
+        -- Autocompletion
+        use {
+            "hrsh7th/nvim-cmp",
+            config = function()
+                require("configs._nvim-cmp")
+            end
+        }
+        use { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" }
+        use { "hrsh7th/cmp-buffer", after = "nvim-cmp" }
+        use { "hrsh7th/cmp-path", after = "nvim-cmp" }
+        use { "f3fora/cmp-spell", after = "nvim-cmp" }
+        use { "saadparwaiz1/cmp_luasnip", after = { "nvim-cmp", "LuaSnip" } }
+        use { "onsails/lspkind-nvim", module = "lspkind" }
+        use {
+            "L3MON4D3/LuaSnip",
+            requires = {
+                "rafamadriz/friendly-snippets"
+            },
+            module = "luasnip",
+        }
+
         -- Lifehacks
         use {
             "lewis6991/gitsigns.nvim",
