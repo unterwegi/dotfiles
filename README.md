@@ -30,6 +30,6 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply unterwegi
 
 ## Terminal Color Scheme Setup
 
-Based on [Tomorrow Night](https://github.com/ChrisKempson/Tomorrow-Theme#tomorrow-night).
+Based on [Nightfox.nvim](https://github.com/EdenEast/nightfox.nvim).
 
 See [alacritty.yml](private_dot_config/alacritty/alacritty.yml) for reference.
