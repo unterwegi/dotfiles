@@ -18,3 +18,13 @@ end
 
 # Tell aqua to use my config inside my home
 set -gx AQUA_GLOBAL_CONFIG $HOME/.config/aqua.yaml
+
+# Launch Starship prompt
+if type -q starship
+  starship init fish | source
+end
+
+# Launch direnv
+if type -q direnv
+  direnv hook fish | source
+end
