@@ -25,3 +25,9 @@ if type -q nvim
   abbr svim 'sudo nvim'
   abbr snvim 'sudo nvim'
 end
+
+# exa (ls clone)
+if type -q exa
+  abbr ll 'exa -l --icons --git --sort=type'
+  abbr la 'exa -lag --git --icons --sort=type'
+end
