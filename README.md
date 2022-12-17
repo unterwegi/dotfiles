@@ -16,17 +16,30 @@ chezmoi init --ssh --apply unterwegi
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply unterwegi
 ```
 
-## Necessary software to install before applying
+## Software to install before applying
 
-* git
-* tmux
-* [ripgrep](https://github.com/BurntSushi/ripgrep)
-* [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+- git
+- tmux
+- [Optional] alacritty
 
-## Optional software
+## Software managed through [aqua](https://github.com/aquaproj/aqua)
 
-* rclone (for Google Drive sync)
-* alacritty
+- [chezmoi](https://github.com/twpayne/chezmoi)
+- [starship](https://github.com/starship/starship)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [fd](https://github.com/sharkdp/fd)
+- [exa](https://github.com/ogham/exa)
+- [neovim](https://github.com/neovim/neovim)
+- [Github CLI](https://github.com/cli/cli)
+- [direnv](https://github.com/direnv/direnv)
+- [yq](https://github.com/mikefarah/yq)
+- [kubectl](https://github.com/kubernetes/kubectl)
+- [kustomize](https://github.com/kubernetes-sigs/kustomize)
+- [helm](https://github.com/helm/helm)
+- [k9s](https://github.com/derailed/k9s)
+- [Optional] [rclone](https://github.com/rclone/rclone)
+
+See [aqua.yml.tmpl](private_dot_config/aqua.yaml.tmpl) for reference.
 
 ## Terminal Color Scheme Setup
 
