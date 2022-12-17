@@ -37,6 +37,7 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply unterwegi
 - [kustomize](https://github.com/kubernetes-sigs/kustomize)
 - [helm](https://github.com/helm/helm)
 - [k9s](https://github.com/derailed/k9s)
+- [navi](https://github.com/denisidoro/navi)
 - [Optional] [rclone](https://github.com/rclone/rclone)
 
 See [aqua.yml.tmpl](private_dot_config/aqua.yaml.tmpl) for reference.
