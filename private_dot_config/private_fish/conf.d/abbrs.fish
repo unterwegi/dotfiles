@@ -1,7 +1,7 @@
 # git
 if type -q git
   abbr g 'git'
-  abbr ga 'git add .'
+  abbr ga 'git add'
   abbr gaa 'git add --all'
   abbr gc 'git commit'
   abbr gcm 'git commit -m'
@@ -12,9 +12,9 @@ if type -q git
   abbr gd 'git diff'
   abbr gds 'git diff --staged'
   abbr gdc 'git diff --cached'
-  abbr gr 'git restore .'
-  abbr grs 'git restore --staged .'
-  abbr grc 'git restore --cached .'
+  abbr gr 'git restore'
+  abbr grs 'git restore --staged'
+  abbr grc 'git restore --cached'
 end
 
 # nvim

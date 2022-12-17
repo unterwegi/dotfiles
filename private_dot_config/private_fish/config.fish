@@ -4,6 +4,7 @@ fish_add_path -a -P $HOME/bin $HOME/.local/bin
 # aqua managed binaries should be used first
 fish_add_path -P $HOME/.local/share/aquaproj-aqua/bin
 
+# set up my EDITOR and VISUAL depending on whats available
 if type -q nvim
   set -gx EDITOR nvim
   set -gx VISUAL nvim
