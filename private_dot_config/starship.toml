@@ -1,0 +1,115 @@
+format = """
+$os$username$hostname\
+[](fg:blue bg:#282c34)\
+$directory\
+[](fg:#282c34)\
+$git_branch\
+$git_status\
+$git_metrics\
+$python\
+$line_break\
+$status\
+$character"""
+
+add_newline  = true
+
+[os]
+style = "fg:black bg:blue"
+format = "[ $symbol]($style)"
+disabled = false
+
+[username]
+show_always = true
+style_user = "fg:black bg:blue"
+style_root = "fg:black bg:red"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+style = "fg:black bg:blue"
+ssh_symbol = " "
+format = "[@$hostname$ssh_symbol ]($style)"
+
+[directory]
+style = "fg:#828997 bg:#282c34"
+read_only_style = "fg:black bg:yellow"
+read_only = " "
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = ""
+truncate_to_repo = true
+
+[git_branch]
+symbol = ""
+style = "fg:purple"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "fg:purple"
+format = "[$all_status$ahead_behind]($style)"
+conflicted = " "
+ahead = " "
+behind = " "
+diverged = " "
+up_to_date = " "
+untracked = " "
+stashed = " "
+modified = " "
+staged = " "
+renamed = " "
+deleted = " "
+
+[git_metrics]
+disabled = false
+
+[fill]
+symbol = " "
+
+[python]
+symbol = ""
+format = '[$symbol$pyenv_prefix ($version )(\($virtualenv\))]($style)'
+
+[character]
+success_symbol = "[  ](fg:black bg:green)[](fg:green)"
+error_symbol = "[  ](fg:black bg:red)[](fg:red)"
+vicmd_symbol = "[  ](fg:black bg:purple)[](fg:purple)"
+
+# OS symbols
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = " "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
