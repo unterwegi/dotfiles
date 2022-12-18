@@ -1,4 +1,5 @@
 README.md
+renovate.json
 {{- if ne .chezmoi.hostname "normandy-linux" }}
 .gitconfig
 {{- end }}
