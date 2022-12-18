@@ -3,12 +3,12 @@ $os$username$hostname\
 [](fg:blue bg:#282c34)\
 $directory\
 [](fg:#282c34)\
+$status\
 $git_branch\
 $git_status\
 $git_metrics\
 $python\
 $line_break\
-$status\
 $character"""
 
 add_newline  = true
@@ -39,6 +39,11 @@ truncation_length = 3
 truncation_symbol = "…/"
 home_symbol = ""
 truncate_to_repo = true
+
+[status]
+disabled = false
+symbol = " "
+style = "red"
 
 [git_branch]
 symbol = ""
@@ -72,7 +77,7 @@ format = '[$symbol$pyenv_prefix ($version )(\($virtualenv\))]($style)'
 
 [character]
 success_symbol = "[  ](fg:black bg:green)[](fg:green)"
-error_symbol = "[  ](fg:black bg:red)[](fg:red)"
+error_symbol = "[  ](fg:black bg:green)[](fg:green)"
 vicmd_symbol = "[  ](fg:black bg:purple)[](fg:purple)"
 
 # OS symbols
