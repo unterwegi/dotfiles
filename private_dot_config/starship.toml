@@ -8,6 +8,7 @@ $git_branch\
 $git_status\
 $git_metrics\
 $python\
+$kubernetes\
 $line_break\
 $character"""
 
@@ -74,6 +75,11 @@ symbol = " "
 [python]
 symbol = ""
 format = '[$symbol$pyenv_prefix ($version )(\($virtualenv\))]($style)'
+
+[kubernetes]
+symbol = " ⎈"
+disabled = false
+format = '[$symbol $context( \($namespace\))]($style)'
 
 [character]
 success_symbol = "[  ](fg:black bg:green)[](fg:green)"
