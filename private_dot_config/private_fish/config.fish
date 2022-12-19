@@ -28,3 +28,10 @@ end
 if type -q direnv
   direnv hook fish | source
 end
+
+# always start tmux in interactive shells
+if status --is-interactive
+and type -q tmux
+and not set -q TMUX
+    exec tmux
+end
