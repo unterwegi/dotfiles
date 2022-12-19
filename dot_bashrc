@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # path
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+export PATH="$HOME/.local/share/aquaproj-aqua/bin:$PATH:$HOME/bin:$HOME/.local/bin"
+
+# aqua setup
+export AQUA_GLOBAL_CONFIG=$HOME/.config/aqua.yaml
 
 # my aliases
 alias ls="ls --color"

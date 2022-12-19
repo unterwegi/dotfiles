@@ -20,6 +20,7 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply unterwegi
 
 - git
 - tmux
+- fish
 - [Optional] alacritty
 
 ## Software managed through [aqua](https://github.com/aquaproj/aqua)
