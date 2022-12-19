@@ -27,7 +27,7 @@ format = "[$user]($style)"
 [hostname]
 ssh_only = false
 style = "fg:black bg:blue"
-ssh_symbol = " "
+ssh_symbol = " "
 format = "[@$hostname$ssh_symbol ]($style)"
 
 [directory]
