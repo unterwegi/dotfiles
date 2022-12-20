@@ -4,6 +4,7 @@ $os$username$hostname\
 $directory\
 [](fg:#282c34)\
 $status\
+$cmd_duration\
 $git_branch\
 $git_status\
 $git_metrics\
@@ -45,6 +46,9 @@ truncate_to_repo = true
 disabled = false
 symbol = " "
 style = "red"
+
+[cmd_duration]
+format = "[$duration]($style)"
 
 [git_branch]
 symbol = ""
