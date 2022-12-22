@@ -8,7 +8,9 @@
     {
       "matchUpdateTypes": ["minor", "patch"],
       "matchCurrentVersion": "!/^v?0/",
-      "automerge": true
+      "automerge": true,
+      "automergeType": "branch",
+      "extends": ["schedule:weekly"]
     }
   ]
 }
