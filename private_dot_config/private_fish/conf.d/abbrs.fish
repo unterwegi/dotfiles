@@ -1,5 +1,5 @@
 # git
-if type -q git
+if command -q git
   abbr g 'git'
   abbr ga 'git add'
   abbr gaa 'git add --all'
@@ -18,7 +18,7 @@ if type -q git
 end
 
 # nvim
-if type -q nvim
+if command -q nvim
   abbr vi 'nvim'
   abbr vim 'nvim'
   abbr svi 'sudo nvim'
@@ -27,7 +27,7 @@ if type -q nvim
 end
 
 # exa (ls clone)
-if type -q exa
+if command -q exa
   abbr ll 'exa -l --icons --git --sort=type'
   abbr la 'exa -lag --git --icons --sort=type'
 end

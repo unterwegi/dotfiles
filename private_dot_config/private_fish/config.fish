@@ -1,8 +1,8 @@
 # set up my EDITOR and VISUAL depending on whats available
-if type -q nvim
+if command -q nvim
   set -gx EDITOR nvim
   set -gx VISUAL nvim
-else if type -q vim
+else if command -q vim
   set -gx EDITOR vim
   set -gx VISUAL vim
 else
@@ -14,13 +14,13 @@ end
 set -gx AQUA_GLOBAL_CONFIG $HOME/.config/aqua.yaml
 
 # Launch direnv
-if type -q direnv
+if command -q direnv
   direnv hook fish | source
 end
 
 # always start tmux in interactive shells
 if status --is-interactive
-and type -q tmux
+and command -q tmux
 and not set -q TMUX
     exec tmux
 end
