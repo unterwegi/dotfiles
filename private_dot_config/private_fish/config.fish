@@ -1,3 +1,11 @@
+# disable greeting
+set -g fish_greeting
+
+# manually managed executables in PATH
+fish_add_path -a -g $HOME/bin $HOME/.local/bin
+# aqua managed binaries should be used first
+fish_add_path -g $HOME/.local/share/aquaproj-aqua/bin
+
 # set up my EDITOR and VISUAL depending on whats available
 if command -q nvim
   set -gx EDITOR nvim
@@ -13,14 +21,14 @@ end
 # Tell aqua to use my config inside my home
 set -gx AQUA_GLOBAL_CONFIG $HOME/.config/aqua.yaml
 
-# Launch direnv
-if command -q direnv
-  direnv hook fish | source
-end
+if status is-interactive
+    # Launch direnv
+    if command -q direnv && not functions -q __direnv_export_eval
+      direnv hook fish | source
+    end
 
-# always start tmux in interactive shells
-if status --is-interactive
-and command -q tmux
-and not set -q TMUX
-    exec tmux
+    # always start tmux in interactive shells
+    if command -q tmux && not set -q TMUX
+        exec tmux
+    end
 end
