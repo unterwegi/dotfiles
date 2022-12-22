@@ -3,6 +3,14 @@
 
 echo -e "\033[0;32m>>>>> Begin Setting Up Fish shell <<<<<\033[0m"
 
+# disable greeting
+set -U fish_greeting
+
+# set up PATH
+fish_add_path -a -U $HOME/bin $HOME/.local/bin
+# aqua managed binaries should be used first
+fish_add_path -U $HOME/.local/share/aquaproj-aqua/bin
+
 ## Install fisher
 if not type -q fisher
   echo "installing fisher"
@@ -12,6 +20,16 @@ end
 # run fisher update whenever .config/fish/fish_plugins has changes
 # .config/fish/fish_plugins hash: {{ include "private_dot_config/private_fish/fish_plugins" | sha256sum }}
 fisher update
+
+# tide config
+echo "3 2 1 2 1 1 2 3 1 2 2 y" | tide configure
+# tide is configured through universal variables
+set -U tide_left_prompt_suffix 
+set -U tide_left_prompt_separator_diff_color 
+set -U tide_right_prompt_prefix 
+set -U tide_right_prompt_separator_diff_color 
+set -U tide_character_icon 
+set -U tide_pwd_markers
 
 echo -e "\033[0;32m>>>>> Finish Setting Up Fish shell <<<<<\033[0m"
 {{ end -}}
