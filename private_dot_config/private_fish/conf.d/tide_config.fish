@@ -12,10 +12,14 @@ set -g tide_right_prompt_separator_diff_color 
 # character
 set -g tide_character_icon " "
 
+# git
+set -g tide_git_icon 
+
 # os
 set -g tide_os_bg_color blue
 
 # pwd
+set -g tide_pwd_markers
 set -g tide_pwd_bg_color 2c313a
 set -g tide_pwd_color_anchors c7cad1
 set -g tide_pwd_color_dirs c7cad1
