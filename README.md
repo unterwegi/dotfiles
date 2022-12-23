@@ -43,6 +43,8 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply unterwegi
 
 See [aqua.yml.tmpl](private_dot_config/aqua.yaml.tmpl) for reference.
 
+Software updates are handled by Mend Renovate and checked every Monday. See [renovate.json](renovate.json)
+
 ## Terminal Color Scheme Setup
 
 Based on [Nightfox.nvim](https://github.com/EdenEast/nightfox.nvim).
