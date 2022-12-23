@@ -85,20 +85,28 @@ local function get_client_capabilities()
     return capabilities
 end
 
+-- Workaround for hover not working when there is diagnostic float
+-- https://www.reddit.com/r/neovim/comments/pg1o6k/neovim_lsp_hover_window_is_hidden_behind_line
+local function fix_buf_hover()
+  vim.o.eventignore = 'CursorHold'
+  vim.lsp.buf.hover()
+  vim.cmd([[autocmd CursorMoved <buffer> ++once set eventignore=""]])
+end
+
 local lspconfig = require("lspconfig")
 local capabilities = get_client_capabilities()
 local on_attach = function(_, bufnr)
     require "lsp_signature".on_attach()
     local keymap = vim.keymap
     local opts = { buffer = bufnr }
+    local ts = require "telescope.builtin"
 
     keymap.set("n", "rn", vim.lsp.buf.rename, { unpack(opts), desc = "Do LSP rename action" })
-    keymap.set("n", "gd", vim.lsp.buf.definition, { unpack(opts), desc = "Do LSP get definition action" })
+    keymap.set("n", "gd", ts.lsp_definitions, { unpack(opts), desc = "Do LSP get definitions action" })
     keymap.set("n", "gD", vim.lsp.buf.declaration, { unpack(opts), desc = "Do LSP get declaration action" })
-    keymap.set("n", "gh", function() return require("utils").fix_buf_hover() end,
-        { unpack(opts), desc = "Do LSP hover action" })
-    keymap.set("n", "gr", vim.lsp.buf.references, { unpack(opts), desc = "Do LSP get references action" })
-    keymap.set("n", "gi", vim.lsp.buf.implementation, { unpack(opts), desc = "Do LSP get implementation action" })
+    keymap.set("n", "gh", fix_buf_hover, { unpack(opts), desc = "Do LSP hover action" })
+    keymap.set("n", "gr", ts.lsp_references, { unpack(opts), desc = "Do LSP get references action" })
+    keymap.set("n", "gi", ts.lsp_implementations, { unpack(opts), desc = "Do LSP get implementations action" })
 end
 
 -- ansiblels
