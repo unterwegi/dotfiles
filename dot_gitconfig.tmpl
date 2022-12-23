@@ -1,5 +1,18 @@
 [user]
-	email = {{ .email }}
-	name = Ingo Unterweger
+    email = {{ .email }}
+    name = Ingo Unterweger
+{{- if .gitSigningKey }}
+    signingKey = {{ .gitSigningKey }}
+
+[commit]
+    gpgsign = true
+{{- end }}
+
+[alias]
+    ci = commit
+    st = status
+
 [pull]
-	rebase = false
+    default = current
+    followTags = true
+    rebase = false
