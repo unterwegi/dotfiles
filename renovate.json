@@ -12,5 +12,5 @@
       "automergeType": "branch",
       "ignoreTests": true,
       "schedule": ["before 4pm on Monday"]
-  ]
+    }
 }
