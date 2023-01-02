@@ -10,7 +10,9 @@
       "matchCurrentVersion": "!/^v?0/",
       "automerge": true,
       "automergeType": "branch",
-      "extends": ["schedule:weekly"]
-    }
+      "ignoreTests": true,
+      "schedule": [
+        "before 4pm on Monday"
+      ]
   ]
 }
