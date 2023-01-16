@@ -24,6 +24,9 @@ if command -q nvim
   abbr svi 'sudo nvim'
   abbr svim 'sudo nvim'
   abbr snvim 'sudo nvim'
+  abbr vimdiff 'nvim -d'
+  abbr vd 'nvim -d'
+  abbr nvd 'nvim -d'
 end
 
 # exa (ls clone)
