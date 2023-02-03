@@ -31,6 +31,7 @@ require("mason-tool-installer").setup {
 
         -- diagnostics
         "markdownlint",
+        "json-lsp",
         "shellcheck",
         "write-good",
         "yamllint",
