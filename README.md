@@ -1,27 +1,50 @@
 # unterwegi's dot files
 
-## Bootstrap
+This repository aims to get my own environment up and running as automatically as possible, powered by [chezmoi](https://www.chezmoi.io/).
 
-Add SSH key in [Github Key settings](https://github.com/settings/keys)
+The setup scripts are aware of the following Linux flavors:
+
+- [Arch](https://archlinux.org/)
+- [Debian](https://www.debian.org/)
+- [EndeavourOS](https://endeavouros.com/)
+- [Ubuntu](https://ubuntu.com/) (Mainly inside a WSL2 setup)
+
+## Bootstrap
 
 Install [chezmoi](https://www.chezmoi.io/install/)
 
 ```bash
-chezmoi init --ssh --apply unterwegi
+chezmoi init --apply unterwegi
 ```
 
 ### One Liner
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply unterwegi
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply unterwegi
 ```
 
-## Software to install before applying
+## Software needed for my setup
+
+The following packages are automatically installed when the chezmoi config setting "installPackages" is enabled.
 
 - git
+- npm
 - tmux
-- fish
-- [Optional] alacritty
+- python + python-pip
+
+Arch exclusive:
+
+- alacritty
+
+## Shell Setup (fish)
+
+My setup uses [fish](https://fishshell.com/) by default. To disable that, disable the chezmoi config setting "useFish".
+
+The following fish plugins get installed (via [fisher](https://github.com/jorgebucaran/fisher)):
+
+- [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
+- [nickeb96/puffer-fish](https://github.com/nickeb96/puffer-fish)
+- [ilancosman/tide@v5](https://github.com/IlanCosman/tide)
 
 ## Software managed through [aqua](https://github.com/aquaproj/aqua)
 
@@ -43,7 +66,7 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply unterwegi
 
 See [aqua.yml.tmpl](private_dot_config/aqua.yaml.tmpl) for reference.
 
-Software updates are handled by Mend Renovate and checked every Monday. See [renovate.json](renovate.json)
+Mend Renovate checks for updates on these packages every Monday. See [renovate.json](renovate.json)
 
 ## Terminal Color Scheme Setup
 
