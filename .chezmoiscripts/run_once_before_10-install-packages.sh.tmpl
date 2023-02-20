@@ -1,0 +1,75 @@
+{{ if and .installPackages (eq .chezmoi.os "linux") -}}
+#!/bin/bash
+set -eufo pipefail
+
+# List of packages to install
+packages=(
+  curl
+  git
+  npm
+  tmux
+)
+
+echo -e "\0033[0;32m>>>>> Begin Package Installation <<<<<\033[0m"
+{{ if (eq .chezmoi.osRelease.id "debian" "ubuntu") -}}
+# Install necessary packages - Debian/Ubuntu
+
+# List of ppa repositories to add
+repositories=(
+  ppa:git-core/ppa
+)
+
+# List of packages to install (Debian extra)
+packages+=(
+  python3
+  python3-pip
+  python3-venv
+)
+
+for repository in ${repositories[@]}; do
+  ppa_repo_source=${repository#ppa:}
+  if ! $(apt-cache policy | grep $ppa_repo_source &> /dev/null); then
+    echo "adding $repository repository to apt"
+{{- if ne .chezmoi.username "root" }}
+    sudo add-apt-repository -y $repository
+{{- else }}
+    add-apt-repository -y $repository
+{{- end }}
+  fi
+done
+
+for package in ${packages[@]}; do
+  if ! $(dpkg-query -W -f='installed' $package &> /dev/null); then
+    echo "installing $package"
+{{- if ne .chezmoi.username "root" }}
+    sudo apt install -y $package
+{{- else }}
+    apt install -y ${packages[@]}
+{{- end }}
+  fi
+done
+
+{{ else if (eq .chezmoi.osRelease.id "arch" "endeavouros") -}}
+# Install necessary packages - Arch/EndeavourOS
+
+# List of packages to install (Arch extra)
+packages+=(
+  alacritty
+  python
+  python-pip
+)
+
+for package in ${packages[@]}; do
+  if [ "$(pacman -Qq $package 2> /dev/null)" != $package ]; then
+    echo "installing $package"
+{{- if ne .chezmoi.username "root" }}
+    sudo pacman -S --noconfirm $package
+{{- else }}
+    pacman -S --noconfirm $package
+{{- end }}
+  fi
+done
+{{- end }}
+
+echo -e "\0033[0;32m>>>>> Finish Package Installation <<<<<\033[0m"
+{{ end -}}

@@ -1,10 +1,12 @@
 {{- $email := promptStringOnce . "email" "Email address" "ingo.unterwegi@gmail.com" -}}
 {{- $driveSync := promptBoolOnce . "driveSync" "Sync Google Drive" true -}}
 {{- $useFish := promptBoolOnce . "useFish" "Use fish shell" true -}}
+{{- $installPackages := promptBoolOnce . "installPackages" "Install necessary packages" true -}}
 {{- $gitSigningKey :=promptStringOnce . "gitSigningKey" "GPG Key to sign GIT commits" "" -}}
 
 [data]
     email = {{ $email | quote }}
     driveSync = {{ $driveSync }}
     useFish = {{ $useFish }}
+    installPackages = {{ $installPackages }}
     gitSigningKey = {{ $gitSigningKey | quote }}
