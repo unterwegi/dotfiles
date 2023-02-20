@@ -1,0 +1,39 @@
+{{ if and .useFish (eq .chezmoi.os "linux") -}}
+#!/usr/bin/fish
+
+echo -e "\033[0;32m>>>>> Begin Setting Up Fish Completions <<<<<\033[0m"
+
+# rerun completion setup when the aqua.yaml has changed
+# .config/aqua.yaml hash: {{ include "private_dot_config/aqua.yaml.tmpl" | sha256sum }}
+## Setup completions
+if not test -d $__fish_config_dir/completions
+  mkdir -p $__fish_config_dir/completions
+end
+
+if command -q chezmoi
+  echo "setting up chezmoi completion"
+  chezmoi completion fish --output=$__fish_config_dir/completions/chezmoi.fish
+end
+
+if command -q kustomize
+  echo "setting up kustomize completion"
+  kustomize completion fish > $__fish_config_dir/completions/kustomize.fish
+end
+
+if command -q kubectl
+  echo "setting up kubectl completion"
+  kubectl completion fish > $__fish_config_dir/completions/kubectl.fish
+end
+
+if command -q helm
+  echo "setting up helm completion"
+  helm completion fish > $__fish_config_dir/completions/helm.fish
+end
+
+if command -q k9s
+  echo "setting up k9s completion"
+  k9s completion fish > $__fish_config_dir/completions/k9s.fish
+end
+
+echo -e "\033[0;32m>>>>> Finish Setting Fish Completions <<<<<\033[0m"
+{{ end -}}
