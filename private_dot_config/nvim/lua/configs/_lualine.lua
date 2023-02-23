@@ -43,6 +43,7 @@ require("lualine").setup {
             {
                 "buffers",
                 mode=4,
+                section_separators = { left = "", right = ""},
                 buffers_color = {
                     active = "lualine_b_normal",
                     inactive = "lualine_c_inactive",
