@@ -62,6 +62,7 @@ local extensions = require("telescope").extensions
 keymap.set("n", "ff", builtin.find_files, { desc = "Find Files" })
 keymap.set("n", "fF", extensions.file_browser.file_browser, { desc = "File Browser" })
 keymap.set("n", "fg", builtin.live_grep, { desc = "Grep in Files" })
+keymap.set("n", "fG", builtin.grep_string, { desc = "Grep word under cursor in Files" })
 keymap.set("n", "fs", builtin.grep_string, { desc = "Find String in Files" })
 keymap.set("n", "fb", builtin.buffers, { desc = "Find Buffers" })
 keymap.set("n", "fh", builtin.help_tags, { desc = "Show Help Tags" })
