@@ -30,6 +30,7 @@ require("mason-tool-installer").setup {
         "shfmt",
 
         -- diagnostics
+        "ansible-lint",
         "markdownlint",
         "json-lsp",
         "shellcheck",
@@ -175,8 +176,8 @@ lspconfig.pylsp.setup {
     }
 }
 
--- sumneko_lua
-lspconfig.sumneko_lua.setup {
+-- lua_ls
+lspconfig.lua_ls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
