@@ -39,6 +39,24 @@ for repository in ${repositories[@]}; do
   fi
 done
 
+# add NodeSources' NodeJS repository to get the latest NodeJS version
+node_repo="node_18.x"
+release="{{ .chezmoi.osRelease.versionCodename }}"
+{{- if ne .chezmoi.username "root" }}
+curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+sudo sh -c "echo deb https://deb.nodesource.com/$node_repo $release main > /etc/apt/sources.list.d/nodesource.list"
+{{- else }}
+curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+echo "deb https://deb.nodesource.com/$node_repo $release main" > /etc/apt/sources.list.d/nodesource.list
+{{- end }}
+
+# ensure the repo index is up-to-date
+{{- if ne .chezmoi.username "root" }}
+sudo apt update
+{{- else }}
+apt update
+{{- end }}
+
 for package in ${packages[@]}; do
   if ! $(dpkg-query -W -f='installed' $package &> /dev/null); then
     echo "installing $package"
