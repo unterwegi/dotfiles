@@ -136,6 +136,12 @@ packer.startup({
                 require("which-key").setup()
             end
         }
+        use {
+            'declancm/maximize.nvim',
+            config = function()
+                require('maximize').setup()
+            end
+        }
     end
 })
 
