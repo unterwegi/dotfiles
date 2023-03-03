@@ -25,19 +25,26 @@ require("mason-lspconfig").setup {
 }
 require("mason-tool-installer").setup {
     ensure_installed = {
-        -- formatting
+        -- null-ls formatting
         "prettierd",
         "shfmt",
 
-        -- diagnostics
+        -- null-ls linters
         "ansible-lint",
         "markdownlint",
-        "json-lsp",
         "shellcheck",
         "write-good",
         "yamllint",
 
-        -- languages
+        -- file specific language servers
+        "ansible-language-server",
+        "bash-language-server",
+        "dockerfile-language-server",
+        "lua-language-server",
+        "json-lsp",
+        "yaml-language-server",
+
+        -- main language servers
         "python-lsp-server",
     },
     auto_update = true,
@@ -279,5 +286,5 @@ null_ls.setup {
         null_ls.builtins.diagnostics.yamllint,
         null_ls.builtins.code_actions.shellcheck,
     },
-    diagnostics_format = "[#{c}] #{m} (#{s})"
+    diagnostics_format = "[#{c}] #{m} (#{s})",
 }
