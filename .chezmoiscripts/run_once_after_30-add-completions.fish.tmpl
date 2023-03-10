@@ -35,5 +35,15 @@ if command -q k9s
   k9s completion fish > $__fish_config_dir/completions/k9s.fish
 end
 
+if command -q pipenv
+  echo "setting up pipenv completion"
+  _PIPENV_COMPLETE=fish_source pipenv > $__fish_config_dir/completions/pipenv.fish
+end
+
+if command -q poetry
+  echo "setting up poetry completion"
+  poetry completions fish > $__fish_config_dir/completions/poetry.fish
+end
+
 echo -e "\033[0;32m>>>>> Finish Setting Fish Completions <<<<<\033[0m"
 {{ end -}}
