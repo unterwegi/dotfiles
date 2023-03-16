@@ -1,11 +1,6 @@
 local keymap = vim.keymap
 local g = vim.g
 
--- Spacebar is <Leader>
-g.mapleader = " "
-g.maplocalleader = " "
-keymap.set("", "<Space>", "<Nop>", { silent = true })
-
 -- Fast save, save quit, force exit
 keymap.set("n", "<Leader>w", ":w!<CR>", { desc = "Write!" })
 keymap.set("n", "<Leader>x", ":x<CR>", { desc = "Write and exit" })
