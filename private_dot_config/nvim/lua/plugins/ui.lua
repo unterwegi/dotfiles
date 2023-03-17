@@ -172,6 +172,18 @@ return {
         config = true,
     },
     {
+        "rcarriga/nvim-notify",
+        config = function()
+            local notify = require("notify")
+            notify.setup({
+                timeout=4000,
+                fps=60,
+                top_down=false,
+            })
+            vim.notify = notify
+        end
+    },
+    {
         "folke/which-key.nvim",
         config = function()
             vim.o.timeout = true

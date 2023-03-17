@@ -13,6 +13,7 @@ return {
 
             telescope.load_extension("zf-native")
             telescope.load_extension("file_browser")
+            telescope.load_extension("notify")
 
             telescope.setup {
                 defaults = {
