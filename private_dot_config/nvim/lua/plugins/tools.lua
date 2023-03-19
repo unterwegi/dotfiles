@@ -42,6 +42,9 @@ return {
 
                     -- main language servers
                     "python-lsp-server",
+
+                    -- debug servers
+                    "debugpy",
                 },
                 auto_update = true,
                 run_on_start = false,
