@@ -1,10 +1,10 @@
 local keymap = vim.keymap
-local g = vim.g
 
--- Fast save, save quit, force exit
+-- Fast save, save quit, buffer unloading, force exit
 keymap.set("n", "<Leader>w", ":w!<CR>", { desc = "Write!" })
 keymap.set("n", "<Leader>x", ":x<CR>", { desc = "Write and exit" })
 keymap.set("n", "<Leader>qq", ":q<CR>", { desc = "Quit" })
+keymap.set("n", "<Leader>bd", ":bd<CR>", { desc = "Unload Buffer" })
 keymap.set("n", "<Leader>qa", ":qa!<CR>", { desc = "Quit all!" })
 keymap.set("n", "<Leader>wq", ":wq!<CR>", { desc = "Write and quit!" })
 keymap.set("n", "<Leader>cc", ":close<CR>", { desc = "Close current window" })
@@ -54,13 +54,13 @@ keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to right split" })
 -- Telescope
 local builtin = require("telescope.builtin")
 local extensions = require("telescope").extensions
-keymap.set("n", "ff", builtin.find_files, { desc = "Find Files" })
-keymap.set("n", "fF", extensions.file_browser.file_browser, { desc = "File Browser" })
-keymap.set("n", "fg", builtin.live_grep, { desc = "Grep in Files" })
-keymap.set("n", "fG", builtin.grep_string, { desc = "Grep word under cursor in Files" })
-keymap.set("n", "fs", builtin.grep_string, { desc = "Find String in Files" })
-keymap.set("n", "fb", builtin.buffers, { desc = "Find Buffers" })
-keymap.set("n", "fh", builtin.help_tags, { desc = "Show Help Tags" })
+keymap.set("n", "<Leader>ff", builtin.find_files, { desc = "Find Files" })
+keymap.set("n", "<Leader>fF", extensions.file_browser.file_browser, { desc = "File Browser" })
+keymap.set("n", "<Leader>fg", builtin.live_grep, { desc = "Grep in Files" })
+keymap.set("n", "<Leader>fG", builtin.grep_string, { desc = "Grep word under cursor in Files" })
+keymap.set("n", "<Leader>fs", builtin.grep_string, { desc = "Find String in Files" })
+keymap.set("n", "<Leader>fb", builtin.buffers, { desc = "Find Buffers" })
+keymap.set("n", "<Leader>fh", builtin.help_tags, { desc = "Show Help Tags" })
 
 -- Trouble
 keymap.set("n", "<Leader>xx", ":TroubleToggle<CR>")

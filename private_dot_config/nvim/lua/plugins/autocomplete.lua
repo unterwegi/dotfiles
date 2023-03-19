@@ -27,6 +27,7 @@ return {
             local luasnip = require("luasnip")
             local lspkind = require("lspkind")
 
+
             local has_words_before = function()
                 local line, col = unpack(vim.api.nvim_win_get_cursor(0))
                 return col ~= 0 and
@@ -77,7 +78,7 @@ return {
                             fallback()
                         end
                     end, { "i", "s" }),
-                    ["<CR>"] = cmp.mapping.confirm {
+                    ["<Tab>"] = cmp.mapping.confirm {
                         behavior = cmp.ConfirmBehavior.Replace,
                     },
                 },
