@@ -19,6 +19,9 @@ return {
                         local venv_path = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX")
 
                         -- python (debugpy)
+                        default.python[1].program = function()
+                            return vim.fn.input("Program to run: ", vim.fn.expand("%:p"))
+                        end
                         default.python[#default.python + 1] = {
                             type = "python",
                             request = "launch",
@@ -46,11 +49,12 @@ return {
             local keymap = vim.keymap
             local ts_dap = require("telescope").extensions.dap
 
-            vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
-            vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "", linehl = "", numhl = "" })
-            vim.fn.sign_define("DapLogPoint", { text = "", texthl = "", linehl = "", numhl = "" })
-            vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" })
-            vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "", linehl = "", numhl = "" })
+            -- I'm too lazy to define my own highlights, so I "borrow" some existing ones
+            vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticError", linehl = "", numhl = "" })
+            vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DiagnosticInfo", linehl = "", numhl = "" })
+            vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticWarn", linehl = "", numhl = "" })
+            vim.fn.sign_define("DapStopped", { text = "", texthl = "DiagnosticHint", linehl = "DiagnosticVirtualTextHint", numhl = "" })
+            vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DiagnosticVirtualTextError", linehl = "DiagnosticVirtualTextError", numhl = "" })
 
             keymap.set("n", "<Leader>dl", require("dap.ui.widgets").hover, { desc = "Show Debug Hover" })
             keymap.set("n", "<Leader>dc", dap.continue, { desc = "Debug Continue" })
