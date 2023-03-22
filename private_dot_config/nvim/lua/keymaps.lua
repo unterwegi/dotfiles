@@ -61,6 +61,7 @@ keymap.set("n", "<Leader>fG", builtin.grep_string, { desc = "Grep word under cur
 keymap.set("n", "<Leader>fs", builtin.grep_string, { desc = "Find String in Files" })
 keymap.set("n", "<Leader>fb", builtin.buffers, { desc = "Find Buffers" })
 keymap.set("n", "<Leader>fh", builtin.help_tags, { desc = "Show Help Tags" })
+keymap.set("n", "<leader>fp", extensions.projections.projections, { desc = "Project Browser" })
 
 -- Trouble
 keymap.set("n", "<Leader>xx", ":TroubleToggle<CR>")

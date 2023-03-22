@@ -9,9 +9,6 @@ return {
                 }
             })
 
-            require('telescope').load_extension('projections')
-            vim.keymap.set("n", "<leader>fp", function() vim.cmd("Telescope projections") end)
-
             -- Autostore session on VimExit
             local Session = require("projections.session")
             vim.api.nvim_create_autocmd({ 'VimLeavePre' }, {
