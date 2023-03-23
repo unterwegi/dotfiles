@@ -157,7 +157,7 @@ return {
     },
     {
         "max397574/better-escape.nvim",
-        opts = { mapping = { "jj" } }
+        opts = { mapping = { "kj" } }
     },
     {
         "numToStr/Comment.nvim",
