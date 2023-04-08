@@ -62,7 +62,7 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 - [helm](https://github.com/helm/helm)
 - [k9s](https://github.com/derailed/k9s)
 - [navi](https://github.com/denisidoro/navi)
-- [Optional] [rclone](https://github.com/rclone/rclone)
+- [rclone](https://github.com/rclone/rclone)
 
 See [aqua.yml](private_dot_config/aqua.yaml) for reference.
 
