@@ -12,7 +12,7 @@ if [ ! $(command -v aqua) ] || [ $(aqua -v | head -n1 | cut -d" " -f3 | sed "s/^
 fi
 
 # rerun aqua install when the aqua.yaml has changed
-# .config/aqua.yaml hash: {{ include "private_dot_config/aqua.yaml.tmpl" | sha256sum }}
+# .config/aqua.yaml hash: {{ include "private_dot_config/aqua.yaml" | sha256sum }}
 export AQUA_GLOBAL_CONFIG={{ .chezmoi.homeDir }}/.config/aqua.yaml
 aqua install -a
 echo -e "\033[0;32m>>>>> Finish Setting Up Aqua <<<<<\033[0m"

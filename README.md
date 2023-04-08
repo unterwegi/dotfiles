@@ -64,7 +64,7 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 - [navi](https://github.com/denisidoro/navi)
 - [Optional] [rclone](https://github.com/rclone/rclone)
 
-See [aqua.yml.tmpl](private_dot_config/aqua.yaml.tmpl) for reference.
+See [aqua.yml.tmpl](private_dot_config/aqua.yaml) for reference.
 
 Mend Renovate checks for updates on these packages every Monday. See [renovate.json](renovate.json)
 

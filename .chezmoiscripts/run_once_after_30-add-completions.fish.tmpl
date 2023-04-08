@@ -4,7 +4,7 @@
 echo -e "\033[0;32m>>>>> Begin Setting Up Fish Completions <<<<<\033[0m"
 
 # rerun completion setup when the aqua.yaml has changed
-# .config/aqua.yaml hash: {{ include "private_dot_config/aqua.yaml.tmpl" | sha256sum }}
+# .config/aqua.yaml hash: {{ include "private_dot_config/aqua.yaml" | sha256sum }}
 ## Setup completions
 if not test -d $__fish_config_dir/completions
   mkdir -p $__fish_config_dir/completions
