@@ -17,6 +17,6 @@ packages:
   - name: helm/helm@v3.11.2
   - name: derailed/k9s@v0.27.3
   - name: stern/stern@v1.24.0
-  - name: denisidoro/navi@v2.20.1
+  - name: denisidoro/navi@v2.22.1
   - name: cortesi/modd@v0.8
   - name: rclone/rclone@v1.62.2
