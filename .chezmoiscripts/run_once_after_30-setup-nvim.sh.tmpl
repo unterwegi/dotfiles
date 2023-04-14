@@ -5,8 +5,6 @@
 set -eufo pipefail
 
 echo -e "\033[0;32m>>>>> Begin Setting Up Neovim <<<<<\033[0m"
-# remove old packer based plugin setup
-rm -rf $HOME/.local/share/nvim/pack/packer $HOME/.config/nvim/plugin/packer_compiled.lua
-nvim --headless "+Lazy! sync" +qa
-nvim --headless -c 'MasonToolsInstall' -c 'quitall'
+nvim --headless "+Lazy! restore" +qa
+nvim --headless -c "TSUpdateSync" -c "MasonToolsInstall" -c "quitall"
 echo -e "\033[0;32m>>>>> Finish Setting Up Neovim <<<<<\033[0m"
