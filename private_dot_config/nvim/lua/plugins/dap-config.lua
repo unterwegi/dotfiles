@@ -6,37 +6,12 @@ return {
             "williamboman/mason.nvim",
             "mfussenegger/nvim-dap",
         },
-        config = function()
-            local nvim_dap = require("mason-nvim-dap")
-
-            nvim_dap.setup({
-                -- automatically set up DAP providers installed via mason
-                automatic_setup = {
-                    -- modifies the default configurations table
-                    -- pass in a function or a list to override with
-                    -- the same can be done for adapters and filetypes
-                    configurations = function(default)
-                        local venv_path = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX")
-
-                        -- python (debugpy)
-                        default.python[1].program = function()
-                            return vim.fn.input("Program to run: ", vim.fn.expand("%:p"))
-                        end
-                        default.python[#default.python + 1] = {
-                            type = "python",
-                            request = "launch",
-                            name = "Python: Run pytest",
-                            module = "pytest",
-                            args = { "${file}" }, -- pass the current file to pytest
-                            pythonPath = venv_path and (venv_path .. "/bin/python") or nil,
-                        }
-
-                        return default
-                    end,
-                },
-            })
-            nvim_dap.setup_handlers {}
-        end,
+        opts = {
+            -- automatically set up DAP providers installed via mason
+            automatic_setup = true,
+            handlers = {},
+        },
+        config = true,
     },
     {
         "rcarriga/nvim-dap-ui",
