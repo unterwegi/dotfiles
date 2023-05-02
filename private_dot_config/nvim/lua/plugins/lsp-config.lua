@@ -9,6 +9,7 @@ return {
             "lewis6991/gitsigns.nvim",
             "williamboman/mason-lspconfig",
             "nvim-lua/plenary.nvim",
+            "hrsh7th/cmp-nvim-lsp",
         },
         config = function()
             -- Diagnostic looks
@@ -32,7 +33,7 @@ return {
             vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]])
 
             local function get_client_capabilities()
-                local capabilities = vim.lsp.protocol.make_client_capabilities()
+                local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
                 capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
                 capabilities.textDocument.completion.completionItem.snippetSupport = true
