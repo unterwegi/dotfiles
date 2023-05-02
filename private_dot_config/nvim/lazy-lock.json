@@ -20,6 +20,7 @@
   "mason-tool-installer.nvim": { "branch": "main", "commit": "a6c4d7df448a78b0a05fd2065bef11ed52bee51c" },
   "mason.nvim": { "branch": "main", "commit": "057ac5ca159c83e302a55bd839a96ff1ea2396db" },
   "maximize.nvim": { "branch": "master", "commit": "97bfc171775c404396f8248776347ebe64474fe7" },
+  "neovim-tasks": { "branch": "master", "commit": "6e37ddc4702f100d18a4b4869ff89d275284b95b" },
   "nightfox.nvim": { "branch": "main", "commit": "a53ff3f99c3cf4e598c5febad367fd3cad341b90" },
   "null-ls.nvim": { "branch": "main", "commit": "33b853a3933eed3137cd055aac4e539e69832ad0" },
   "nvim-autopairs": { "branch": "master", "commit": "7747bbae60074acf0b9e3a4c13950be7a2dff444" },

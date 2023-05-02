@@ -46,6 +46,7 @@ return {
 
                     -- debug servers
                     "debugpy",
+                    "cpptools",
                 },
                 auto_update = true,
                 run_on_start = false,
