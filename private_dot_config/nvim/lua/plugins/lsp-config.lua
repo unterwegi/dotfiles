@@ -108,8 +108,12 @@ return {
             }
 
             -- clangd
+            -- manually need to set offsetEncoding to "utf-8"
+            -- see https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428
+            local clangd_capabilities = get_client_capabilities()
+            clangd_capabilities.offsetEncoding = "utf-8"
             lspconfig.clangd.setup {
-                capabilities = capabilities,
+                capabilities = clangd_capabilities,
                 on_attach = on_attach,
             }
 
