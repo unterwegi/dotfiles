@@ -42,6 +42,7 @@ return {
 
                     -- main language servers
                     "python-lsp-server",
+                    "clangd",
 
                     -- debug servers
                     "debugpy",

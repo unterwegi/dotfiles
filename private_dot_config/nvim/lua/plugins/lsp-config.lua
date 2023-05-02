@@ -107,6 +107,12 @@ return {
                 }
             }
 
+            -- clangd
+            lspconfig.clangd.setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+            }
+
             -- python
             lspconfig.pylsp.setup {
                 capabilities = capabilities,
