@@ -1,3 +1,4 @@
+{{ if .driveSync -}}
 #!/bin/bash
 
 SYNC_DIR="$HOME/GoogleDrive"
@@ -16,3 +17,4 @@ if ping -q -c 1 -W 1 googleapis.com >/dev/null; then
         rclone bisync --verbose --exclude-from "$EXCLUDE_FILE" "$SYNC_DIR" gdrive:
     fi
 fi
+{{ end -}}
