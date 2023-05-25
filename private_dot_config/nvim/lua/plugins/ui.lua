@@ -51,9 +51,9 @@ return {
                         path = 1,
                         shorting_target = 30,
                         symbols = {
-                            modified = " ",
-                            readonly = " ",
-                            unnamed = " ",
+                            modified = " 󰎜",
+                            readonly = " 󰈡",
+                            unnamed = " 󰎞",
                         }
                     }
                 },
@@ -87,10 +87,10 @@ return {
         "lewis6991/gitsigns.nvim",
         opts = {
             signs = {
-                add          = { hl = "GitSignsAdd", text = "樂", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
+                add          = { hl = "GitSignsAdd", text = "󰐕", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
                 change       = {
                     hl = "GitSignsChange",
-                    text = "樂",
+                    text = "󰐕",
                     numhl = "GitSignsChangeNr",
                     linehl = "GitSignsChangeLn"
                 },
