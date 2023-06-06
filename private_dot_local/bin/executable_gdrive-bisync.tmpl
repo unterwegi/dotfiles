@@ -3,6 +3,7 @@
 
 SYNC_DIR="$HOME/GoogleDrive"
 EXCLUDE_FILE="$HOME/.config/rclone/gdrive-exclude.txt"
+RCLONE="$HOME/.local/share/aquaproj-aqua/bin/rclone"
 
 mkdir -p "$SYNC_DIR"
 
@@ -11,10 +12,10 @@ if ping -q -c 1 -W 1 googleapis.com >/dev/null; then
     # if we are connected, try a bisync
     if [ -z "$(ls -A "$SYNC_DIR")" ]; then
         # first, lets see if we need to do an initial resync (local folder is empty, so rclone has no sync cache yet)
-        rclone bisync --verbose --resync --exclude-from "$EXCLUDE_FILE" "$SYNC_DIR" gdrive:
+        $RCLONE bisync --verbose --resync --exclude-from "$EXCLUDE_FILE" "$SYNC_DIR" gdrive:
     else
         # otherwise just do a normal bisync
-        rclone bisync --verbose --exclude-from "$EXCLUDE_FILE" "$SYNC_DIR" gdrive:
+        $RCLONE bisync --verbose --exclude-from "$EXCLUDE_FILE" "$SYNC_DIR" gdrive:
     fi
 fi
 {{ end -}}
