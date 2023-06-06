@@ -39,8 +39,6 @@ keymap.set("", "H", "^", { desc = "Move cursor to first char" })
 keymap.set("", "L", "$", { desc = "Move cursor to last char" })
 
 -- Indent or de-indent
-keymap.set("n", "<Tab>", ">>", { desc = "Add indentation" })
-keymap.set("n", "<S-Tab>", "<<", { desc = "De-indentation" })
 keymap.set("v", "<Tab>", ">gv", { desc = "Add indentation" })
 keymap.set("v", "<S-Tab>", "<gv", { desc = "De-indentation" })
 
