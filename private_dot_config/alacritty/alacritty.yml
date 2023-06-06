@@ -5,6 +5,7 @@ window:
     columns: 0
     lines: 0
   dynamic_padding: true
+  decorations_theme_variant: Dark
 scrolling:
   history: 10000
 font:
