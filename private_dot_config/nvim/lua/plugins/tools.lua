@@ -24,6 +24,7 @@ return {
                     -- null-ls formatting
                     "prettierd",
                     "shfmt",
+                    "clang-format",
 
                     -- null-ls linters
                     "ansible-lint",
