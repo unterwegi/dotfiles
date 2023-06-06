@@ -6,6 +6,7 @@ echo -e "\0033[0;32m>>>>> Begin Install Fish Shell <<<<<\033[0m"
 
 {{ if (eq .chezmoi.osRelease.id "debian" "ubuntu") -}}
 # Installing fish - Debian/Ubuntu
+{{ if (eq .chezmoi.osRelease.id "ubuntu") -}}
 ppa_repo_source=fish-shell/release-3
 if ! $(apt-cache policy | grep $ppa_repo_source &> /dev/null); then
   echo "adding ppa:$ppa_repo_source repository to apt"
@@ -15,6 +16,10 @@ if ! $(apt-cache policy | grep $ppa_repo_source &> /dev/null); then
   add-apt-repository -y ppa:$ppa_repo_source
 {{- end }}
 fi
+{{- else }}
+echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_{{ .chezmoi.osRelease.versionID }}/ /' | sudo tee /etc/apt/sources.list.d/shells:fish:release:3.list
+curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_{{ .chezmoi.osRelease.versionID }}/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
+{{- end }}
 
 if ! $(dpkg-query -W -f='installed' fish &> /dev/null); then
   echo "installing fish"

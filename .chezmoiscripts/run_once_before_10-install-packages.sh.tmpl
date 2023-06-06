@@ -7,7 +7,6 @@ packages=(
   curl
   git
   nodejs
-  npm
   tmux
 )
 
@@ -27,6 +26,7 @@ packages+=(
   python3-venv
 )
 
+{{ if (eq .chezmoi.osRelease.id "ubuntu") -}}
 for repository in ${repositories[@]}; do
   ppa_repo_source=${repository#ppa:}
   if ! $(apt-cache policy | grep $ppa_repo_source &> /dev/null); then
@@ -38,6 +38,7 @@ for repository in ${repositories[@]}; do
 {{- end }}
   fi
 done
+{{- end }}
 
 # add NodeSources' NodeJS repository to get the latest NodeJS version
 node_repo="node_18.x"
@@ -74,6 +75,7 @@ done
 # List of packages to install (Arch extra)
 packages+=(
   alacritty
+  npm
   pyenv
   python
   python-pip
