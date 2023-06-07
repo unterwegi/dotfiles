@@ -48,21 +48,22 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 
 ## Software managed through [aqua](https://github.com/aquaproj/aqua)
 
-- [chezmoi](https://github.com/twpayne/chezmoi)
-- [starship](https://github.com/starship/starship)
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [fd](https://github.com/sharkdp/fd)
-- [exa](https://github.com/ogham/exa)
-- [neovim](https://github.com/neovim/neovim)
 - [Github CLI](https://github.com/cli/cli)
+- [chezmoi](https://github.com/twpayne/chezmoi)
 - [direnv](https://github.com/direnv/direnv)
-- [yq](https://github.com/mikefarah/yq)
-- [kubectl](https://github.com/kubernetes/kubectl)
-- [kustomize](https://github.com/kubernetes-sigs/kustomize)
+- [exa](https://github.com/ogham/exa)
+- [fd](https://github.com/sharkdp/fd)
+- [fzf](https://github.com/junegunn/fzf)
 - [helm](https://github.com/helm/helm)
 - [k9s](https://github.com/derailed/k9s)
+- [kubectl](https://github.com/kubernetes/kubectl)
+- [kustomize](https://github.com/kubernetes-sigs/kustomize)
 - [navi](https://github.com/denisidoro/navi)
+- [neovim](https://github.com/neovim/neovim)
 - [rclone](https://github.com/rclone/rclone)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [starship](https://github.com/starship/starship)
+- [yq](https://github.com/mikefarah/yq)
 
 See [aqua.yml](private_dot_config/aqua.yaml) for reference.
 
