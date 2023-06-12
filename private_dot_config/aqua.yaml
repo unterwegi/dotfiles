@@ -3,7 +3,7 @@ registries:
     ref: v4.16.0 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: twpayne/chezmoi@v2.34.1
-  - name: starship/starship@v1.14.2
+  - name: starship/starship@v1.15.0
   - name: BurntSushi/ripgrep@13.0.0
   - name: sharkdp/fd@v8.7.0
   - name: ogham/exa@v0.10.1
