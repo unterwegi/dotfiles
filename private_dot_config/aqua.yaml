@@ -19,4 +19,4 @@ packages:
   - name: denisidoro/navi@v2.22.1
   - name: cortesi/modd@v0.8
   - name: rclone/rclone@v1.62.2
-  - name: junegunn/fzf@0.41.1
+  - name: junegunn/fzf@0.42.0
