@@ -42,9 +42,10 @@ My setup uses [fish](https://fishshell.com/) by default. To disable that, disabl
 
 The following fish plugins get installed (via [fisher](https://github.com/jorgebucaran/fisher)):
 
+- [edc/bass](https://github.com/edc/bass)
+- [ilancosman/tide@v5](https://github.com/IlanCosman/tide)
 - [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
 - [nickeb96/puffer-fish](https://github.com/nickeb96/puffer-fish)
-- [ilancosman/tide@v5](https://github.com/IlanCosman/tide)
 
 ## Software managed through [aqua](https://github.com/aquaproj/aqua)
 
