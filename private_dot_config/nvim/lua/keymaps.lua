@@ -9,8 +9,9 @@ keymap.set("n", "<Leader>qa", ":qa!<CR>", { desc = "Quit all!" })
 keymap.set("n", "<Leader>wq", ":wq!<CR>", { desc = "Write and quit!" })
 keymap.set("n", "<Leader>cc", ":close<CR>", { desc = "Close current window" })
 
--- Fast command mode yes I use qwertz layout, please don't hate me ;)
+-- Fast command mode in some modes; yes I use a german qwertz layout, please don't hate me ;)
 keymap.set("n", "ö", ":", { desc = "Enter command mode" })
+keymap.set("v", "ö", ":", { desc = "Enter command mode" })
 
 -- Easier cursor movement on wrapped line
 keymap.set("n", "k", "gk")
