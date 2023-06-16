@@ -176,9 +176,9 @@ return {
         config = function()
             local notify = require("notify")
             notify.setup({
-                timeout=4000,
-                fps=60,
-                top_down=false,
+                timeout = 4000,
+                fps = 60,
+                top_down = false,
             })
             vim.notify = notify
         end
@@ -191,6 +191,17 @@ return {
             require("which-key").setup()
         end,
     },
-    "stevearc/dressing.nvim",
+    {
+        "stevearc/dressing.nvim",
+        opts = {
+            input = {
+                override = function(conf)
+                    conf.col = -1
+                    conf.row = 0
+                    return conf
+                end,
+            },
+        }
+    },
     "lukas-reineke/indent-blankline.nvim",
 }
