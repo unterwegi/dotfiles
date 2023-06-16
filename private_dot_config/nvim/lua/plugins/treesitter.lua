@@ -6,6 +6,8 @@ return {
             ensure_installed = {
                 'bash',
                 'comment',
+                'cmake',
+                'cpp',
                 'dockerfile',
                 'diff',
                 'fish',
@@ -20,6 +22,8 @@ return {
                 'make',
                 'markdown',
                 'markdown_inline',
+                'ninja',
+                'puppet',
                 'python',
                 'regex',
                 'sql',
