@@ -84,6 +84,13 @@ return {
         }
     },
     {
+        "folke/todo-comments.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        config = true,
+    },
+    {
         "lewis6991/gitsigns.nvim",
         opts = {
             signs = {
@@ -113,7 +120,8 @@ return {
                     linehl = "GitSignsChangeLn"
                 },
             },
-            linehl = true,
+            signcolumn = true,
+            numhl = true,
             current_line_blame = true,
             current_line_blame_opts = {
                 virt_text = true,
