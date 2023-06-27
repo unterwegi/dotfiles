@@ -3,16 +3,21 @@
 set -eufo pipefail
 
 echo -e "\033[0;32m>>>>> Begin Setting Up Aqua <<<<<\033[0m"
-# renovate: depName=aquaproj/aqua datasource=github-releases
-current_aqua_version=v1.25.0
 
-if [ ! $(command -v aqua) ] || [ $(aqua -v | head -n1 | cut -d" " -f3 | sed "s/^/v/") != $current_aqua_version ]; then
-  echo "installing / upgrading aqua"
-  curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.2/aqua-installer | bash -s -- -v $current_aqua_version -i {{ .chezmoi.homeDir }}/.local/bin/aqua
+if [ ! $(command -v aqua) ]; then
+    echo "installing aqua"
+    cd {{ .chezmoi.homeDir }}/.cache
+    curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer
+    echo "c2af02bdd15da6794f9c98db40332c804224930212f553a805425441f8331665  aqua-installer" | sha256sum -c
+    chmod +x aqua-installer
+    ./aqua-installer
+    rm -f aqua-installer
 fi
 
 # rerun aqua install when the aqua.yaml has changed
 # .config/aqua.yaml hash: {{ include "private_dot_config/aqua.yaml" | sha256sum }}
 export AQUA_GLOBAL_CONFIG={{ .chezmoi.homeDir }}/.config/aqua.yaml
+# also check for updates of aqua itself
+aqua update-aqua
 aqua install -a
 echo -e "\033[0;32m>>>>> Finish Setting Up Aqua <<<<<\033[0m"
