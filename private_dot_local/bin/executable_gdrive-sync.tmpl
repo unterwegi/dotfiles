@@ -6,8 +6,8 @@ RCLONE="$HOME/.local/share/aquaproj-aqua/bin/rclone"
 
 mkdir -p "$SYNC_DIR"
 
-# check to see if there is a connection by pinging a Google server
-if ping -q -c 1 -W 1 googleapis.com >/dev/null; then
+# check to see if there is a connection by checking the discovery document of the Drive API
+if curl -LsS --max-time 5 --fail -o /dev/null https://www.googleapis.com/discovery/v1/apis/drive/v3/rest; then
     # if we are connected, try a sync
     $RCLONE sync -uv --exclude-from $HOME/.config/rclone/gdrive-exclude.txt gdrive: $SYNC_DIR
 fi
