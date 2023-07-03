@@ -263,7 +263,9 @@ return {
                     null_ls.builtins.diagnostics.ansiblelint.with {
                         filetypes = { "yaml.ansible" }
                     },
-                    null_ls.builtins.diagnostics.markdownlint,
+                    null_ls.builtins.diagnostics.markdownlint.with {
+                        extra_args = { "--disable", "MD013" }
+                    },
                     null_ls.builtins.diagnostics.shellcheck,
                     null_ls.builtins.diagnostics.write_good,
                     null_ls.builtins.diagnostics.yamllint,
