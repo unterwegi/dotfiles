@@ -43,12 +43,15 @@ done
 # add NodeSources' NodeJS repository to get the latest NodeJS version
 node_repo="node_18.x"
 release="{{ .chezmoi.osRelease.versionCodename }}"
+keyring="/usr/share/keyrings/nodesource.gpg"
 {{- if ne .chezmoi.username "root" }}
-curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
-sudo sh -c "echo deb https://deb.nodesource.com/$node_repo $release main > /etc/apt/sources.list.d/nodesource.list"
+curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee $keyring >/dev/null
+sudo chmod a+r $keyring
+sudo sh -c "echo deb [signed-by=$keyring] https://deb.nodesource.com/$node_repo $release main > /etc/apt/sources.list.d/nodesource.list"
 {{- else }}
-curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
-echo "deb https://deb.nodesource.com/$node_repo $release main" > /etc/apt/sources.list.d/nodesource.list
+curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | tee $keyring >/dev/null
+chmod a+r $keyring
+echo "deb [signed-by=$keyring] https://deb.nodesource.com/$node_repo $release main" > /etc/apt/sources.list.d/nodesource.list
 {{- end }}
 
 # ensure the repo index is up-to-date
