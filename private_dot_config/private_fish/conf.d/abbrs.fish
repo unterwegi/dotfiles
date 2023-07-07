@@ -29,8 +29,8 @@ if command -q nvim
   abbr nvd 'nvim -d'
 end
 
-# exa (ls clone)
-if command -q exa
-  abbr ll 'exa -l --icons --git --sort=type'
-  abbr la 'exa -lag --git --icons --sort=type'
+# lsd (ls clone)
+if command -q lsd
+  abbr ll 'lsd -l'
+  abbr la 'lsd -la'
 end

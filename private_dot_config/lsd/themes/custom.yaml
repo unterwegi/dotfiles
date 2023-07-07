@@ -1,0 +1,39 @@
+user: yellow
+group: dark_yellow
+permission:
+  read: dark_green
+  write: dark_yellow
+  exec: dark_red
+  exec-sticky: dark_magenta
+  no-access: dark_grey
+  octal: dark_cyan
+  acl: dark_cyan
+  context: cyan
+date:
+  hour-old: blue
+  day-old: blue
+  older: dark_blue
+size:
+  none: dark_green
+  small: dark_green
+  medium: dark_green
+  large: dark_green
+inode:
+  valid: magenta
+  invalid: dark_grey
+links:
+  valid: magenta
+  invalid: dark_grey
+tree-edge: dark_grey
+# TODO: wait for lsd 1.0 release
+# git-status:
+#   default: dark_grey
+#   unmodified: dark_grey
+#   ignored: dark_grey
+#   new-in-index: dark_green
+#   new-in-workdir: dark_green
+#   typechange: dark_yellow
+#   deleted: dark_red
+#   renamed: dark_green
+#   modified: dark_yellow
+#   conflicted: dark_red

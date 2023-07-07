@@ -59,6 +59,7 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 - [k9s](https://github.com/derailed/k9s)
 - [kubectl](https://github.com/kubernetes/kubectl)
 - [kustomize](https://github.com/kubernetes-sigs/kustomize)
+- [lsd](https://github.com/lsd-rs/lsd)
 - [navi](https://github.com/denisidoro/navi)
 - [neovim](https://github.com/neovim/neovim)
 - [rclone](https://github.com/rclone/rclone)

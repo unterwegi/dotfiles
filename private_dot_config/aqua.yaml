@@ -20,3 +20,4 @@ packages:
   - name: cortesi/modd@v0.8
   - name: rclone/rclone@v1.63.0
   - name: junegunn/fzf@0.42.0
+  - name: lsd-rs/lsd@0.23.1
