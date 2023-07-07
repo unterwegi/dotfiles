@@ -61,19 +61,6 @@ return {
                 lualine_y = { "progress" },
                 lualine_z = { "location" }
             },
-            tabline = {
-                lualine_b = {
-                    {
-                        "buffers",
-                        mode = 4,
-                        section_separators = { left = "", right = "" },
-                        buffers_color = {
-                            active = "lualine_b_normal",
-                            inactive = "lualine_c_inactive",
-                        },
-                    }
-                },
-            },
         },
     },
     {
