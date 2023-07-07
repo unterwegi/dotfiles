@@ -20,3 +20,4 @@ vim.keymap.set("", "<Space>", "<Nop>", { silent = true })
 
 require("lazy").setup("plugins")
 require("keymaps")
+require("autocmds")
