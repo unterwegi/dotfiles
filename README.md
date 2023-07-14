@@ -28,6 +28,7 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply unterwegi
 The following packages are automatically installed when the chezmoi config setting "installPackages" is enabled.
 
 - git
+- golang
 - npm
 - tmux
 - python + python-pip

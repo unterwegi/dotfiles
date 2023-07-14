@@ -25,7 +25,6 @@
   "maximize.nvim": { "branch": "master", "commit": "97bfc171775c404396f8248776347ebe64474fe7" },
   "neovim-tasks": { "branch": "master", "commit": "6e37ddc4702f100d18a4b4869ff89d275284b95b" },
   "nightfox.nvim": { "branch": "main", "commit": "77aa7458d2b725c2d9ff55a18befe1b891ac473e" },
-  "null-ls.nvim": { "branch": "main", "commit": "c89333e034a8daba654ebfcf9a4ec9f87765f01e" },
   "nvim-autopairs": { "branch": "master", "commit": "59df87a84c80a357ca8d8fe86e451b93ac476ccc" },
   "nvim-cmp": { "branch": "main", "commit": "fc0f694af1a742ada77e5b1c91ff405c746f4a26" },
   "nvim-dap": { "branch": "master", "commit": "7c1d47cf7188fc31acdf951f9eee22da9d479152" },

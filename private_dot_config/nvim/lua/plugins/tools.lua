@@ -21,10 +21,9 @@ return {
         config = function()
             require("mason-tool-installer").setup {
                 ensure_installed = {
-                    -- formatters
+                    -- formatters (called through efm)
                     "prettierd",
                     "shfmt",
-                    "clang-format",
 
                     -- linters
                     "markdownlint",
@@ -41,6 +40,7 @@ return {
                     "yaml-language-server",
 
                     -- main language servers
+                    "efm",
                     "python-lsp-server",
                     "clangd",
 

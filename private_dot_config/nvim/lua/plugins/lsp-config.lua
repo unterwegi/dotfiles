@@ -82,7 +82,7 @@ return {
                 keymap.set("n", "gh", fix_buf_hover, { unpack(opts), desc = "Do LSP hover action" })
                 keymap.set("n", "gr", ts.lsp_references, { unpack(opts), desc = "Do LSP get references action" })
                 keymap.set("n", "gi", ts.lsp_implementations,
-                { unpack(opts), desc = "Do LSP get implementations action" })
+                    { unpack(opts), desc = "Do LSP get implementations action" })
             end
 
             -- ansiblels
@@ -122,6 +122,27 @@ return {
             lspconfig.clangd.setup {
                 capabilities = clangd_capabilities,
                 on_attach = on_attach,
+            }
+
+            -- efm (general purpose LSP to integrate some formatters)
+            local prettierd = { formatCommand = 'prettierd "${INPUT}"', formatStdin = true }
+            local shfmt = { formatCommand = "shfmt -i 2 -ci", formatStdin = true }
+            -- TODO does a generic post save autocmd make more sense here for trailing whitespace removal?
+            local trailing_whitespace = { formatCommand = "sed -E -e 's/[[:space:]]*$//'", formatStdin = true}
+            lspconfig.efm.setup {
+                init_options = { documentFormatting = true },
+                filetypes = { "cpp", "html", "json", "less", "lua", "markdown", "python", "sh", "text", "yaml" },
+                settings = {
+                    languages = {
+                        html = { prettierd },
+                        json = { prettierd },
+                        less = { prettierd },
+                        markdown = { prettierd },
+                        sh = { shfmt },
+                        yaml = { prettierd },
+                        ["="] = { trailing_whitespace },
+                    }
+                }
             }
 
             -- python
@@ -241,30 +262,6 @@ return {
                         }
                     }
                 }
-            }
-        end
-    },
-    {
-        "jose-elias-alvarez/null-ls.nvim",
-        dependencies = {
-            "WhoIsSethDaniel/mason-tool-installer.nvim",
-        },
-        opts = function()
-            local null_ls = require("null-ls")
-
-            return {
-                sources = {
-                    null_ls.builtins.formatting.prettierd,
-                    null_ls.builtins.formatting.shfmt.with {
-                        extra_args = { "-i", "2", "-ci" }
-                    },
-                    null_ls.builtins.formatting.trim_newlines,
-                    null_ls.builtins.formatting.trim_whitespace,
-                    null_ls.builtins.formatting.clang_format.with {
-                        extra_args = { "--style=file" }
-                    },
-                },
-                diagnostics_format = "[#{c}] #{m} (#{s})",
             }
         end
     },
