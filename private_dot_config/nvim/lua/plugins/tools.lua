@@ -21,16 +21,15 @@ return {
         config = function()
             require("mason-tool-installer").setup {
                 ensure_installed = {
-                    -- null-ls formatting
+                    -- formatters
                     "prettierd",
                     "shfmt",
                     "clang-format",
 
-                    -- null-ls linters
-                    "ansible-lint",
+                    -- linters
                     "markdownlint",
-                    "shellcheck",
-                    "write-good",
+                    "shellcheck", -- implicitly used by bash-language-server
+                    "vale",
                     "yamllint",
 
                     -- file specific language servers
@@ -61,20 +60,24 @@ return {
                     local pylsp_path = require("mason-core.path").package_prefix("python-lsp-server")
                     local pylsp_pip = pylsp_path .. "/venv/bin/pip"
 
-                    local function install_pylsp_packages()
+                    local function post_mason_setup()
+                        -- Install python-lsp plugins
                         for _, package in ipairs(pylsp_packages) do
                             vim.cmd(":! " .. pylsp_pip .. " install -U --disable-pip-version-check " .. package)
                         end
+
+                        -- Ensure vale is correctly set up
+                        vim.cmd(":!vale sync")
                     end
 
                     local is_headless = #vim.api.nvim_list_uis() == 0
                     if is_headless then
                         -- we are running synchronous inside headless mode, so no async please
-                        install_pylsp_packages()
+                        post_mason_setup()
                     else
                         -- we are running interactively so run in background
                         vim.schedule(function()
-                            install_pylsp_packages()
+                            post_mason_setup()
                         end)
                     end
                 end,

@@ -260,16 +260,6 @@ return {
                     },
                     null_ls.builtins.formatting.trim_newlines,
                     null_ls.builtins.formatting.trim_whitespace,
-                    null_ls.builtins.diagnostics.ansiblelint.with {
-                        filetypes = { "yaml.ansible" }
-                    },
-                    null_ls.builtins.diagnostics.markdownlint.with {
-                        extra_args = { "--disable", "MD013" }
-                    },
-                    null_ls.builtins.diagnostics.shellcheck,
-                    null_ls.builtins.diagnostics.write_good,
-                    null_ls.builtins.diagnostics.yamllint,
-                    null_ls.builtins.code_actions.shellcheck,
                     null_ls.builtins.formatting.clang_format.with {
                         extra_args = { "--style=file" }
                     },
