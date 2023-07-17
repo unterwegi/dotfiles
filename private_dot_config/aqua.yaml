@@ -10,7 +10,7 @@ packages:
   - name: neovim/neovim@v0.9.1
   - name: cli/cli@v2.31.0
   - name: direnv/direnv@v2.32.3
-  - name: mikefarah/yq@v4.34.1
+  - name: mikefarah/yq@v4.34.2
   - name: kubernetes/kubectl@v1.27.3
   - name: kubernetes-sigs/kustomize@kustomize/v5.1.0
   - name: helm/helm@v3.12.2
