@@ -77,6 +77,7 @@ return {
                 local ts = require "telescope.builtin"
 
                 keymap.set("n", "rn", ":IncRename ", { unpack(opts), desc = "Do LSP rename action" })
+                keymap.set("n", "ra", vim.lsp.buf.code_action, { unpack(opts), desc = "Do LSP rename action" })
                 keymap.set("n", "gd", ts.lsp_definitions, { unpack(opts), desc = "Do LSP get definitions action" })
                 keymap.set("n", "gD", vim.lsp.buf.declaration, { unpack(opts), desc = "Do LSP get declaration action" })
                 keymap.set("n", "gh", fix_buf_hover, { unpack(opts), desc = "Do LSP hover action" })

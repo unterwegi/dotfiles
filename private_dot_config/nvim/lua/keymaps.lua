@@ -15,6 +15,7 @@ vim.cmd.inoreabbrev({"üü", "["})
 vim.cmd.inoreabbrev({"++", "]"})
 vim.cmd.inoreabbrev({"ÜÜ", "{"})
 vim.cmd.inoreabbrev({"**", "}"})
+keymap.set("n", "<Leader>af", "<C-^>") -- alternate file switching
 
 -- Easier cursor movement on wrapped line
 keymap.set("n", "k", "gk")
