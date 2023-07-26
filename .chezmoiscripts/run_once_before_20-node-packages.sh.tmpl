@@ -1,0 +1,20 @@
+{{ if and .installPackages (eq .chezmoi.os "linux") -}}
+#!/bin/bash
+set -eufo pipefail
+
+# List of NPM packages to install globally
+packages=(
+  @compodoc/live-server
+)
+
+for package in ${packages[@]}; do
+  if [ "$(npm ls -g $package 2> /dev/null)" != $package ]; then
+    echo "installing $package via npm"
+{{- if ne .chezmoi.username "root" }}
+    sudo npm install -g $package
+{{- else }}
+    npm install -g $package
+{{- end }}
+  fi
+done
+{{ end -}}
