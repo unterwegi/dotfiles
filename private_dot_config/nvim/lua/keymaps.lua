@@ -64,7 +64,9 @@ keymap.set("n", "<Leader>y", "\"+y", { desc = "Yank to + register" })
 local builtin = require("telescope.builtin")
 local extensions = require("telescope").extensions
 keymap.set("n", "<Leader>ff", builtin.find_files, { desc = "Find Files" })
-keymap.set("n", "<Leader>fF", extensions.file_browser.file_browser, { desc = "File Browser" })
+keymap.set("n", "<Leader>fF", function()
+    extensions.file_browser.file_browser { respect_gitignore = false, hidden = true }
+end, { desc = "File Browser" })
 keymap.set("n", "<Leader>fg", builtin.live_grep, { desc = "Grep in Files" })
 keymap.set("n", "<Leader>fG", builtin.grep_string, { desc = "Grep word under cursor in Files" })
 keymap.set("n", "<Leader>fs", builtin.grep_string, { desc = "Find String in Files" })
