@@ -11,6 +11,7 @@ vim.o.smartcase = true
 vim.o.incsearch = true
 vim.o.hidden = true
 vim.o.completeopt="menuone,noinsert,noselect"
+vim.opt.sessionoptions:append("localoptions") -- remember localoptions in sessions
 vim.bo.smartindent = true
 vim.bo.autoindent = true
 
