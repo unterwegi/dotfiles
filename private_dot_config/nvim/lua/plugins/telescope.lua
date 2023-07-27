@@ -28,7 +28,12 @@ return {
                         hidden = true,
                         no_ignore = true,
                         no_ignore_parent = true,
-                    }
+                    },
+                    live_grep = {
+                       additional_args = {
+                           "-u"
+                       },
+                    },
                 },
             }
         end
