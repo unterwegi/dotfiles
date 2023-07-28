@@ -10,7 +10,7 @@ mkdir -p "$SYNC_DIR"
 # check to see if there is a connection by checking the discovery document of the Drive API
 if curl -LsS --max-time 5 --fail -o /dev/null https://www.googleapis.com/discovery/v1/apis/drive/v3/rest; then
     # if we are connected, try a bisync
-    if [ -z "$(ls -A "$SYNC_DIR")" ]; then
+    if [ -n "$FORCE_RESYNC" ] || [ -z "$(ls -A "$SYNC_DIR")" ]; then
         # first, lets see if we need to do an initial resync (local folder is empty, so rclone has no sync cache yet)
         $RCLONE bisync --verbose --resync --exclude-from "$EXCLUDE_FILE" "$SYNC_DIR" gdrive:
     else
