@@ -58,7 +58,7 @@ keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to left split" })
 keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to right split" })
 
 -- Quick yank to "+" register
-keymap.set("n", "<Leader>y", "\"+y", { desc = "Yank to + register" })
+keymap.set({"n", "v"}, "<Leader>y", "\"+y", { desc = "Yank to + register" })
 
 -- Telescope
 local builtin = require("telescope.builtin")
