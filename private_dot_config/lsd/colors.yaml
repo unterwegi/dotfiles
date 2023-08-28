@@ -25,15 +25,14 @@ links:
   valid: magenta
   invalid: dark_grey
 tree-edge: dark_grey
-# TODO: wait for lsd 1.0 release
-# git-status:
-#   default: dark_grey
-#   unmodified: dark_grey
-#   ignored: dark_grey
-#   new-in-index: dark_green
-#   new-in-workdir: dark_green
-#   typechange: dark_yellow
-#   deleted: dark_red
-#   renamed: dark_green
-#   modified: dark_yellow
-#   conflicted: dark_red
+git-status:
+  default: dark_grey
+  unmodified: dark_grey
+  ignored: dark_grey
+  new-in-index: dark_green
+  new-in-workdir: dark_green
+  typechange: dark_yellow
+  deleted: dark_red
+  renamed: dark_green
+  modified: dark_yellow
+  conflicted: dark_red

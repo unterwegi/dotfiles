@@ -5,8 +5,7 @@ blocks:
   - group
   - size
   - date
-  # TODO: wait for 1.0 release
-  # - git
+  - git
   - name
 # strftime format to get something like this: 17 Jun 21 20:14:55
 date: "+%b %d %y %H:%M"
