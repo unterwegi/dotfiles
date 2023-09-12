@@ -74,6 +74,12 @@ keymap.set("n", "<Leader>fb", builtin.buffers, { desc = "Find Buffers" })
 keymap.set("n", "<Leader>fh", builtin.help_tags, { desc = "Show Help Tags" })
 keymap.set("n", "<leader>fp", extensions.projections.projections, { desc = "Project Browser" })
 
+-- Neogit
+keymap.set("n", "<Leader>gg", function()
+    local neogit = require('neogit')
+    neogit.open()
+end, { desc = "Open Neogit" })
+
 -- Trouble
 keymap.set("n", "<Leader>xx", ":TroubleToggle<CR>")
 keymap.set("n", "<Leader>xr", ":TroubleToggle lsp_references<CR>")
