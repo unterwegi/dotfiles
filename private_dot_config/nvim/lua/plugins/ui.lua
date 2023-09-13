@@ -65,7 +65,6 @@ return {
     },
     {
         "folke/trouble.nvim",
-        event = "BufReadPost",
         opts = {
             height = 20,
         }
