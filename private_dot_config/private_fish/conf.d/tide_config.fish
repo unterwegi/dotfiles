@@ -1,5 +1,5 @@
 # left prompt
-set -g tide_left_prompt_items os pwd git newline character
+set -g tide_left_prompt_items vi_mode pwd git newline character
 set -g tide_left_prompt_suffix 
 set -g tide_left_prompt_separator_diff_color 
 
@@ -11,6 +11,9 @@ set -g tide_right_prompt_separator_diff_color 
 
 # character
 set -g tide_character_icon " "
+set -g tide_character_vi_icon_default " "
+set -g tide_character_vi_icon_replace " "
+set -g tide_character_vi_icon_visual " "
 
 # git
 set -g tide_git_icon 
@@ -31,3 +34,13 @@ set -g tide_virtual_env_color black
 
 # cmd_duration
 set -g tide_cmd_duration_bg_color purple
+
+# vi_mode
+set -g tide_vi_mode_bg_color_default blue
+set -g tide_vi_mode_color_default black
+set -g tide_vi_mode_bg_color_insert green
+set -g tide_vi_mode_color_insert black
+set -g tide_vi_mode_bg_color_replace red
+set -g tide_vi_mode_color_replace black
+set -g tide_vi_mode_bg_color_visual purple
+set -g tide_vi_mode_color_visual black

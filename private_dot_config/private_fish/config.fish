@@ -6,6 +6,9 @@ fish_add_path -a -g $HOME/bin $HOME/.local/bin
 # aqua managed binaries should be used first
 fish_add_path -g $HOME/.local/share/aquaproj-aqua/bin
 
+# enable my keybindings
+set fish_key_bindings fish_user_key_bindings
+
 # set up my EDITOR and VISUAL depending on whats available
 if command -q nvim
   set -gx EDITOR nvim
