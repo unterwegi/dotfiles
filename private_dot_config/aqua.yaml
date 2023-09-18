@@ -18,6 +18,6 @@ packages:
   - name: stern/stern@v1.26.0
   - name: denisidoro/navi@v2.22.1
   - name: cortesi/modd@v0.8
-  - name: rclone/rclone@v1.63.1
+  - name: rclone/rclone@v1.64.0
   - name: junegunn/fzf@0.42.0
   - name: lsd-rs/lsd@v1.0.0
