@@ -7,7 +7,7 @@ return {
             "sindrets/diffview.nvim",
             "ibhagwan/fzf-lua",
         },
-        config = true
+        config = true,
     },
     {
         "lewis6991/gitsigns.nvim",
@@ -23,4 +23,16 @@ return {
             },
         }
     },
+    {
+        "ThePrimeagen/git-worktree.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+        config = function()
+            local telescope = require("telescope")
+            require("git-worktree").setup()
+            telescope.load_extension("git_worktree")
+        end,
+    }
 }
