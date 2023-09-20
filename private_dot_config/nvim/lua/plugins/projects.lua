@@ -2,6 +2,9 @@ return {
     {
         "gnikdroy/projections.nvim",
         branch="pre_release",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+        },
         config = function()
             require("projections").setup({
                 workspaces = {
@@ -23,6 +26,9 @@ return {
                     if vim.fn.argc() == 0 then switcher.switch(vim.loop.cwd()) end
                 end,
             })
+
+            local telescope = require("telescope")
+            telescope.load_extension('projections')
         end
     }
 }

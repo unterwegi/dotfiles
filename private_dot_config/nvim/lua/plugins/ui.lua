@@ -94,14 +94,20 @@ return {
     },
     {
         "rcarriga/nvim-notify",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+        },
         config = function()
             local notify = require("notify")
+            local telescope = require("telescope")
+
             notify.setup({
                 timeout = 4000,
                 fps = 60,
                 top_down = false,
             })
             vim.notify = notify
+            telescope.load_extension("notify")
         end
     },
     {

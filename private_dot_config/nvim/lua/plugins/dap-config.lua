@@ -16,13 +16,17 @@ return {
         "rcarriga/nvim-dap-ui",
         dependencies = {
             "mfussenegger/nvim-dap",
+            "nvim-telescope/telescope.nvim",
             "nvim-telescope/telescope-dap.nvim",
             "lewis6991/gitsigns.nvim",
         },
         config = function()
             local dap, dapui, gs = require("dap"), require("dapui"), require("gitsigns")
+            local telescope = require("telescope")
             local keymap = vim.keymap
-            local ts_dap = require("telescope").extensions.dap
+
+            telescope.load_extension("dap")
+            local ts_dap = telescope.extensions.dap
 
             -- I am too lazy to define my own highlights, so I "borrow" some existing ones
             vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticError", linehl = "", numhl = "" })
