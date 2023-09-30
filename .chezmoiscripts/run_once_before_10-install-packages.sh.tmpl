@@ -90,6 +90,7 @@ packages+=(
   python-pipx
   python-poetry
   python-pipenv
+  yay
 )
 
 for package in ${packages[@]}; do
@@ -102,7 +103,18 @@ for package in ${packages[@]}; do
 {{- end }}
   fi
 done
-{{- end }}
 
+# List of AUR packages to install (Arch extra)
+packages+=(
+  deckmaster
+)
+
+for package in ${packages[@]}; do
+  if [ "$(yay -Qq $package 2> /dev/null)" != $package ]; then
+    echo "installing $package"
+    yay -S --noconfirm $package
+  fi
+done
+{{- end }}
 echo -e "\0033[0;32m>>>>> Finish Package Installation <<<<<\033[0m"
 {{ end -}}

@@ -1,0 +1,17 @@
+{{ if eq .chezmoi.hostname "normandy-linux" -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+echo -e "\033[0;32m>>>>> Begin Setting Up Streamdeck Service <<<<<\033[0m"
+if systemctl --user is-enabled streamdeck.path > /dev/null; then
+    echo "systemd path activator for streamdeck already enabled!"
+else
+    echo "enabling systemd streamdeck.path unit in user scope ..."
+    systemctl --user daemon-reload
+    systemctl --user enable streamdeck.timer
+    systemctl --user start streamdeck.timer
+fi
+
+echo -e "\033[0;32m>>>>> Finish Setting Up Streamdeck Service <<<<<\033[0m"
+{{ end -}}
