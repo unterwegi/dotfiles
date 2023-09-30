@@ -4,6 +4,19 @@
 set -eufo pipefail
 
 echo -e "\033[0;32m>>>>> Begin Setting Up Streamdeck Service <<<<<\033[0m"
+
+echo "creating udev rules file for streamdeck device symlinks ..."
+sudo tee /etc/udev/rules.d/50-streamdeck.rules > /dev/null <<EOL
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0fd9", ATTRS{idProduct}=="0060", TAG+="uaccess", SYMLINK+="streamdeck"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0fd9", ATTRS{idProduct}=="006d", TAG+="uaccess", SYMLINK+="streamdeck"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0fd9", ATTRS{idProduct}=="0080", TAG+="uaccess", SYMLINK+="streamdeck"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0fd9", ATTRS{idProduct}=="0063", TAG+="uaccess", SYMLINK+="streamdeck-mini"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0fd9", ATTRS{idProduct}=="006c", TAG+="uaccess", SYMLINK+="streamdeck-xl"
+EOL
+
+echo "reloading udev rules ..."
+sudo udevadm control --reload-rules
+
 if systemctl --user is-enabled streamdeck.path > /dev/null; then
     echo "systemd path activator for streamdeck already enabled!"
 else
