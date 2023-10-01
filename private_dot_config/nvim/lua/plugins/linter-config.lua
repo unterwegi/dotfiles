@@ -12,6 +12,7 @@ return {
                 rst = { "vale", },
                 text = { "vale", },
                 yaml = { "yamllint", },
+                go = { "golangcilint", },
             }
 
             local markdownlint = lint.linters.markdownlint

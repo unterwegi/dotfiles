@@ -22,10 +22,12 @@ return {
             require("mason-tool-installer").setup {
                 ensure_installed = {
                     -- formatters (called through efm)
+                    "gofumpt",
                     "prettierd",
                     "shfmt",
 
                     -- linters
+                    "golangci-lint",
                     "markdownlint",
                     "shellcheck", -- implicitly used by bash-language-server
                     "vale",
@@ -35,6 +37,7 @@ return {
                     "ansible-language-server",
                     "bash-language-server",
                     "dockerfile-language-server",
+                    "gopls",
                     "lua-language-server",
                     "json-lsp",
                     "yaml-language-server",

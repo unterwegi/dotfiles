@@ -104,6 +104,17 @@ return {
                 on_attach = on_attach,
             }
 
+            -- gopls
+            lspconfig.gopls.setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+                settings = {
+                    gopls = {
+                        gofumpt = true
+                    }
+                }
+            }
+
             -- jsonls
             lspconfig.jsonls.setup {
                 capabilities = capabilities,
