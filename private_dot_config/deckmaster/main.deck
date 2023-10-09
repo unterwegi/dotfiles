@@ -71,17 +71,32 @@ background = "assets/background.png"
 
 #####################################################
 # Row 2
-# [[keys]]
-#   index = 5
-#   [keys.widget]
+[[keys]]
+  index = 5
+  [keys.widget]
+    id = "temp"
+    [keys.widget.config]
+      sensorKey = "k10temp_tctl"
+      label = "CPU"
+      fillColor = "#d497de"
 
-# [[keys]]
-#   index = 6
-#   [keys.widget]
+[[keys]]
+  index = 6
+  [keys.widget]
+    id = "temp"
+    [keys.widget.config]
+      sensorKey = "amdgpu_edge"
+      label = "GPU Edge"
+      fillColor = "#d497de"
 
-# [[keys]]
-#   index = 7
-#   [keys.widget]
+[[keys]]
+  index = 7
+  [keys.widget]
+    id = "temp"
+    [keys.widget.config]
+      sensorKey = "amdgpu_mem"
+      label = "GPU Mem"
+      fillColor = "#d497de"
 
 # [[keys]]
 #   index = 8
@@ -97,7 +112,7 @@ background = "assets/background.png"
   index = 10
   [keys.widget]
     id = "top"
-    update = "1000"
+    interval = 1000
     [keys.widget.config]
       mode = "cpu"
       fillColor = "#d497de"
@@ -106,7 +121,7 @@ background = "assets/background.png"
   index = 11
   [keys.widget]
     id = "top"
-    update = "1000"
+    interval = 1000
     [keys.widget.config]
       mode = "memory"
 

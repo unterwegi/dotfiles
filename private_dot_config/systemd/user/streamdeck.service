@@ -2,7 +2,8 @@
 Description=Deckmaster Service
 
 [Service]
-ExecStart=/usr/bin/deckmaster -deck %h/.config/deckmaster/main.deck
+#ExecStart=/usr/bin/deckmaster -deck %h/.config/deckmaster/main.deck
+ExecStart=%h/projects/deckmaster/deckmaster -deck %h/.config/deckmaster/main.deck
 Restart=on-failure
 ExecReload=kill -HUP $MAINPID
 
