@@ -16,7 +16,9 @@ return {
             -- Autostore session on VimExit
             local Session = require("projections.session")
             vim.api.nvim_create_autocmd({ 'VimLeavePre' }, {
-                callback = function() Session.store(vim.loop.cwd()) end,
+                callback = function()
+                    if vim.fn.argc() == 0 then Session.store(vim.loop.cwd()) end
+                end,
             })
 
             -- Switch to project if vim was started in a project dir
