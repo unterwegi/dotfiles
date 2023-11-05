@@ -4,7 +4,7 @@ return {
         config = function()
             local gen = require("gen")
 
-            gen.model = "mistral:instruct"
+            gen.model = "zephyr:7b"
             gen.prompts["Prompt"] = {
                 prompt = "$input",
                 replace = false
