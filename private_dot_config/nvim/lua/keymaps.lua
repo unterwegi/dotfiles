@@ -11,6 +11,8 @@ keymap.set("n", "<Leader>cc", ":close<CR>", { desc = "Close current window" })
 
 -- Some shortcuts related to make qwertz more usable; yes I use a german qwertz layout, please don't hate me ;)
 keymap.set({"n", "v"}, "ö", ":", { desc = "Enter command mode" })
+keymap.set({"n", "v"}, "ä", "@", { desc = "Execute macro from register" })
+keymap.set({"n", "v"}, "ää", "@@", { desc = "Execute last macro again" })
 vim.cmd.inoreabbrev({"üü", "["})
 vim.cmd.inoreabbrev({"++", "]"})
 vim.cmd.inoreabbrev({"ÜÜ", "{"})
