@@ -96,3 +96,6 @@ end, { desc = "Fix document formatting" })
 keymap.set("v", "<Leader>pp", function()
     return vim.lsp.buf.range_formatting()
 end, { desc = "Fix document formatting for range" })
+
+-- LLMs
+keymap.set({ "n", "v" }, "<Leader>LL", ":Gen<CR>", { desc = "Prompt Language model" })

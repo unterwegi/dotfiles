@@ -1,0 +1,15 @@
+{{ if .ollama -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+echo -e "\033[0;32m>>>>> Preparing usage of Ollama <<<<<\033[0m"
+defaultModel="mistral:instruct"
+# temporarily start ollama to pre-download our default model
+ollama serve &
+# ensure we kill our ollama background process at the end
+trap 'trap - SIGTERM && kill $(jobs -p)' SIGINT SIGTERM EXIT
+sleep 2
+ollama pull "$defaultModel"
+echo -e "\033[0;32m>>>>> Finished preparing usage of Ollama <<<<<\033[0m"
+{{ end -}}

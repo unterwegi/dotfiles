@@ -3,6 +3,7 @@
 {{- $useFish := promptBoolOnce . "useFish" "Use fish shell" true -}}
 {{- $installPackages := promptBoolOnce . "installPackages" "Install necessary packages" true -}}
 {{- $gitSigningKey :=promptStringOnce . "gitSigningKey" "GPG Key to sign GIT commits" "" -}}
+{{- $ollama := promptBoolOnce . "ollama" "Prepare Ollama" false -}}
 
 [data]
     email = {{ $email | quote }}
@@ -10,3 +11,4 @@
     useFish = {{ $useFish }}
     installPackages = {{ $installPackages }}
     gitSigningKey = {{ $gitSigningKey | quote }}
+    ollama = {{ $ollama }}
