@@ -1,6 +1,7 @@
 {{- $email := promptStringOnce . "email" "Email address" "ingo.unterwegi@gmail.com" -}}
 {{- $driveSync := promptBoolOnce . "driveSync" "Sync Google Drive" true -}}
 {{- $useFish := promptBoolOnce . "useFish" "Use fish shell" true -}}
+{{- $useHyprland := promptBoolOnce . "useHyprland" "Install and use Hyprland" false -}}
 {{- $installPackages := promptBoolOnce . "installPackages" "Install necessary packages" true -}}
 {{- $gitSigningKey :=promptStringOnce . "gitSigningKey" "GPG Key to sign GIT commits" "" -}}
 {{- $ollama := promptBoolOnce . "ollama" "Prepare Ollama" false -}}
@@ -9,6 +10,7 @@
     email = {{ $email | quote }}
     driveSync = {{ $driveSync }}
     useFish = {{ $useFish }}
+    useHyprland = {{ $useHyprland }}
     installPackages = {{ $installPackages }}
     gitSigningKey = {{ $gitSigningKey | quote }}
     ollama = {{ $ollama }}

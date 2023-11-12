@@ -1,0 +1,59 @@
+{{ if .useHyprland -}}
+#!/bin/bash
+
+echo -e "\033[0;32m>>>>> Begin Setting Up Hyprland <<<<<\033[0m"
+
+# install packages
+packages=(
+  cliphist                      # clipboard history
+  fuzzel                        # app launcher
+  grim                          # screenshots
+  hyprland                      # main package
+  mako                          # notifications
+  polkit-kde-agent              # privilege elevation
+  slurp                         # region screnshots
+  thunar                        # file manager
+  swaybg                        # wallpaper
+  waybar                        # status bar
+  wl-clipboard                  # clipboard
+  xdg-desktop-portal-gtk        # sharing
+  xdg-desktop-portal-hyprland   # sharing
+)
+
+{{ if (eq .chezmoi.osRelease.id "debian" "ubuntu") -}}
+# Install packages - Debian/Ubuntu
+# ensure the repo index is up-to-date
+{{- if ne .chezmoi.username "root" }}
+sudo apt update
+{{- else }}
+apt update
+{{- end }}
+
+for package in ${packages[@]}; do
+  if ! $(dpkg-query -W -f='installed' $package &> /dev/null); then
+    echo "installing $package"
+{{- if ne .chezmoi.username "root" }}
+    sudo apt install -y $package
+{{- else }}
+    apt install -y ${packages[@]}
+{{- end }}
+  fi
+done
+
+{{ else if (eq .chezmoi.osRelease.id "arch" "endeavouros") -}}
+# Install packages - Arch/EndeavourOS
+
+for package in ${packages[@]}; do
+  if [ "$(pacman -Qq $package 2> /dev/null)" != $package ]; then
+    echo "installing $package"
+{{- if ne .chezmoi.username "root" }}
+    sudo pacman -S --noconfirm $package
+{{- else }}
+    pacman -S --noconfirm $package
+{{- end }}
+  fi
+done
+{{- end }}
+
+echo -e "\033[0;32m>>>>> Finish Setting Up Hyprland <<<<<\033[0m"
+{{ end -}}

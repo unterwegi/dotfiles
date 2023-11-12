@@ -1,0 +1,64 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 5,
+    "modules-left": [
+        "mpris"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "network",
+        "clock"
+    ],
+    "hyprland/window": {
+        "max-length": 200,
+        "separate-outputs": true
+    },
+    "tray": {
+        "spacing": 5,
+        "icon-size": 18,
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "network": {
+        "format-wifi": " {essid} ({signalStrength}%)  ",
+        "format-ethernet": " {ipaddr}/{cidr} 󰈀 ",
+        "tooltip-format": "{ifname} via {gwaddr} 󰛳",
+        "format-linked": " {ifname} (No IP) ",
+        "format-disconnected": " Disconnected ⚠ ",
+        "format-alt": " {ifname}: {ipaddr}/{cidr} "
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "󰝟 {icon} {format_source}",
+        "format-muted": "󰝟 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "󱡏",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "mpris": {
+        "format": "{dynamic} ({status})"
+    }
+}
