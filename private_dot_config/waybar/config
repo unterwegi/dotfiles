@@ -13,7 +13,8 @@
         "tray",
         "pulseaudio",
         "network",
-        "clock"
+        "clock",
+        "custom/wlogout"
     ],
     "hyprland/window": {
         "max-length": 200,
@@ -59,6 +60,16 @@
         "on-click": "pavucontrol"
     },
     "mpris": {
-        "format": "{dynamic} ({status})"
+        "format": "{dynamic} ({status})",
+        "dynamic-len": 100,
+        "dynamic-order": [
+            "title",
+            "artist",
+            "album"
+        ]
+    },
+    "custom/wlogout": {
+        "format": " 󰐥 ",
+        "on-click": "wlogout"
     }
 }

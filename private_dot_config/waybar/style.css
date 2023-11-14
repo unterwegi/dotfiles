@@ -59,6 +59,7 @@ tooltip {
 #temperature,
 #workspaces,
 #tray,
+#custom-wlogout,
 #backlight {
     background: #1e1e2e;
     opacity: 0.8;
@@ -101,4 +102,8 @@ tooltip {
 
 #battery {
     color: #a6e3a1;
+}
+
+#custom-wlogout {
+    color: #9d79d6;
 }

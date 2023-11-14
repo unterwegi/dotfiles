@@ -53,6 +53,18 @@ for package in ${packages[@]}; do
 {{- end }}
   fi
 done
+
+# List of AUR packages to install (Arch extra)
+packages+=(
+  wlogout
+)
+
+for package in ${packages[@]}; do
+  if [ "$(yay -Qq $package 2> /dev/null)" != $package ]; then
+    echo "installing $package"
+    yay -S --noconfirm $package
+  fi
+done
 {{- end }}
 
 echo -e "\033[0;32m>>>>> Finish Setting Up Hyprland <<<<<\033[0m"
