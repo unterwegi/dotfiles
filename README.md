@@ -29,13 +29,10 @@ The following packages are automatically installed when the chezmoi config setti
 
 - git
 - golang
+- kitty
 - npm
 - tmux
 - python + python-pip
-
-Arch exclusive:
-
-- alacritty
 
 ## Shell Setup (fish)
 
