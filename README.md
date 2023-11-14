@@ -74,4 +74,4 @@ Mend Renovate checks for updates on these packages every Monday. See [renovate.j
 
 Based on [Nightfox.nvim](https://github.com/EdenEast/nightfox.nvim).
 
-See [alacritty.yml](private_dot_config/alacritty/alacritty.yml) for reference.
+See [kitty.conf](private_dot_config/kitty/kitty.conf) for reference.
