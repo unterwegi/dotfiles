@@ -19,6 +19,6 @@ packages:
   - name: denisidoro/navi@v2.22.1
   - name: cortesi/modd@v0.8
   - name: rclone/rclone@v1.64.2
-  - name: junegunn/fzf@0.44.0
+  - name: junegunn/fzf@0.44.1
   - name: lsd-rs/lsd@v1.0.0
   - name: jmorganca/ollama@v0.1.9
