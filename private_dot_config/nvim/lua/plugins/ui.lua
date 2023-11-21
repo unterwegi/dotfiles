@@ -57,7 +57,23 @@ return {
                         }
                     }
                 },
-                lualine_x = { "filetype" },
+                lualine_x = {
+                    { "filetype" },
+                    {
+                        function()
+                            local status = require("ollama").status()
+
+                            if status == "IDLE" then
+                                return "󱙺" -- nf-md-robot-outline
+                            elseif status == "WORKING" then
+                                return "󰚩 " .. status -- nf-md-robot
+                            end
+                        end,
+                        cond = function()
+                            return package.loaded["ollama"] and require("ollama").status() ~= nil
+                        end,
+                    },
+                },
                 lualine_y = { "progress" },
                 lualine_z = { "location" }
             },
