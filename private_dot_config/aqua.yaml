@@ -21,4 +21,4 @@ packages:
   - name: rclone/rclone@v1.65.0
   - name: junegunn/fzf@0.44.1
   - name: lsd-rs/lsd@v1.0.0
-  - name: jmorganca/ollama@v0.1.10
+  - name: jmorganca/ollama@v0.1.16
