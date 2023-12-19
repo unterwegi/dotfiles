@@ -2,3 +2,7 @@
     type = "file"
     url = "https://raw.githubusercontent.com/petobens/trueline/master/trueline.sh"
     refreshPeriod = "168h"
+[".goenv"]
+    type = "git-repo"
+    url = "https://github.com/go-nv/goenv.git"
+    refreshPeriod = "168h"
