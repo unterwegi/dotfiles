@@ -9,7 +9,7 @@ fi
 
 test -f ~/.profile_work && . ~/.profile_work
 
-# source the .bashrc (normally not sourced when logging in via ssh)
-if [ -f ~/.bashrc ]; then
+# when we are in a bash shell, source the .bashrc
+if [ -n "$BASH_VERSION" ] && [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
