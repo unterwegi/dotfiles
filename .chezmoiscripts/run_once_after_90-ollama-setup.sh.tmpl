@@ -9,13 +9,13 @@ models=(
   "codellama:7b"
 )
 # start and enable the ollama service
-if ! systemctl --user is-enabled google-drive-sync.timer >/dev/null; then
+if ! systemctl --user is-enabled ollama.service >/dev/null; then
   echo "Starting ollama service"
   systemctl --user daemon-reload
   systemctl --user enable ollama.service
   systemctl --user start ollama.service
+  sleep 3
 fi
-sleep 2
 
 for model in ${models[@]}; do
   echo "Pulling model '$model'"

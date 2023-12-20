@@ -3,7 +3,9 @@ Description=Ollama Service
 After=network-online.target
 
 [Service]
-ExecStart=%h/.local/share/aquaproj-aqua/bin/ollama serve
+# need to do it like this beacuse my ollama installatoin needs a working aqua environment
+ExecStart=/bin/bash -c "source $HOME/.bashrc; exec ollama serve"
+SyslogIdentifier=ollama
 Restart=always
 RestartSec=3
 
