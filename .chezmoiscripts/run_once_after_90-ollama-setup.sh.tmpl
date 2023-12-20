@@ -4,12 +4,23 @@
 set -eufo pipefail
 
 echo -e "\033[0;32m>>>>> Preparing usage of Ollama <<<<<\033[0m"
-defaultModel="zephyr:7b"
-# temporarily start ollama to pre-download our default model
-ollama serve &
-# ensure we kill our ollama background process at the end
-trap 'trap - SIGTERM && kill $(jobs -p)' SIGINT SIGTERM EXIT
+models=(
+  "zephyr:7b"
+  "codellama:7b"
+)
+# start and enable the ollama service
+if ! systemctl --user is-enabled google-drive-sync.timer >/dev/null; then
+  echo "Starting ollama service"
+  systemctl --user daemon-reload
+  systemctl --user enable ollama.service
+  systemctl --user start ollama.service
+fi
 sleep 2
-ollama pull "$defaultModel"
+
+for model in ${models[@]}; do
+  echo "Pulling model '$model'"
+  ollama pull "$model"
+done
+
 echo -e "\033[0;32m>>>>> Finished preparing usage of Ollama <<<<<\033[0m"
 {{ end -}}

@@ -6,6 +6,23 @@ return {
         opts = {
             model = "zephyr:7b",
             prompts = {
+                -- override of default prompts
+                Ask_About_Code = {
+                    model = "codellama:7b",
+                },
+                Explain_Code = {
+                    model = "codellama:7b",
+                },
+                Simplify_Code = {
+                    model = "codellama:7b",
+                },
+                Modify_Code = {
+                    model = "codellama:7b",
+                },
+                Generate_Code = {
+                    model = "codellama:7b",
+                },
+                -- my prompts
                 Enhance_Grammar_Spelling = {
                     prompt = "Modify the following $ftype text to improve grammar and spelling. "
                         .. response_format
@@ -38,7 +55,8 @@ return {
                 },
                 Review_Code = {
                     prompt = "Review the following $filetype code and make concise suggestions:\n```$ftype\n$sel\n```",
-                    action = "display"
+                    action = "display",
+                    model = "codellama:7b",
                 },
             }
         },
