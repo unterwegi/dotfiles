@@ -17,6 +17,9 @@ set -g tide_character_vi_icon_visual " "
 
 # git
 set -g tide_git_icon 
+set -g tide_git_bg_color green
+set -g tide_git_bg_color_unstable yellow
+set -g tide_git_bg_color_urgen red
 
 # os
 set -g tide_os_bg_color 2c313a
@@ -30,8 +33,8 @@ set -g tide_pwd_color_dirs c7cad1
 set -g tide_pwd_color_truncated_dirs c7cad1
 
 # virtual_env
-set -g tide_virtual_env_bg_color yellow
-set -g tide_virtual_env_color black
+set -g tide_python_bg_color yellow
+set -g tide_python_color black
 
 # cmd_duration
 set -g tide_cmd_duration_bg_color purple
