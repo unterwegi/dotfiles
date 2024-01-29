@@ -1,6 +1,7 @@
 {{ if .driveSync -}}
 #!/bin/bash
 
+export PATH="$HOME/.local/share/aquaproj-aqua/bin:$PATH:$HOME/bin:$HOME/.local/bin"
 SYNC_DIR="$HOME/GoogleDrive"
 EXCLUDE_FILE="$HOME/.config/rclone/gdrive-exclude.txt"
 RCLONE="$HOME/.local/share/aquaproj-aqua/bin/rclone"
