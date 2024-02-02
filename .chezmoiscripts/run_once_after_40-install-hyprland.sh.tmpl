@@ -14,7 +14,7 @@ packages=(
   polkit-kde-agent              # privilege elevation
   slurp                         # region screnshots
   thunar                        # file manager
-  tuigreet                      # console greeter for greetd
+  greetd-tuigreet               # console greeter for greetd
   swaybg                        # wallpaper
   waybar                        # status bar
   wl-clipboard                  # clipboard
@@ -57,7 +57,7 @@ for package in ${packages[@]}; do
 done
 
 # List of AUR packages to install (Arch extra)
-packages+=(
+packages=(
   wlogout
 )
 
