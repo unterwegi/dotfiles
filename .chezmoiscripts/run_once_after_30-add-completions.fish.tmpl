@@ -30,6 +30,11 @@ if command -q helm
   helm completion fish > $__fish_config_dir/completions/helm.fish
 end
 
+if command -q minikube
+  echo "setting up minikube completion"
+  minikube completion fish > $__fish_config_dir/completions/minikube.fish
+end
+
 if command -q k9s
   echo "setting up k9s completion"
   k9s completion fish > $__fish_config_dir/completions/k9s.fish

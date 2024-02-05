@@ -61,6 +61,7 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 - [kubectl](https://github.com/kubernetes/kubectl)
 - [kustomize](https://github.com/kubernetes-sigs/kustomize)
 - [lsd](https://github.com/lsd-rs/lsd)
+- [minikube](https://github.com/kubernetes/minikube)
 - [modd](https://github.com/cortesi/modd)
 - [navi](https://github.com/denisidoro/navi)
 - [neovim](https://github.com/neovim/neovim)
