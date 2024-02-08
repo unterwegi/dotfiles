@@ -94,17 +94,27 @@ background = "assets/background.png"
   [keys.widget]
     id = "temp"
     [keys.widget.config]
+      sensorKey = "amdgpu_junction"
+      label = "GPU Junct"
+      fillColor = "#d497de"
+
+[[keys]]
+  index = 8
+  [keys.widget]
+    id = "temp"
+    [keys.widget.config]
       sensorKey = "amdgpu_mem"
       label = "GPU Mem"
       fillColor = "#d497de"
 
-# [[keys]]
-#   index = 8
-#   [keys.widget]
-
-# [[keys]]
-#   index = 9
-#   [keys.widget]
+[[keys]]
+  index = 9
+  [keys.widget]
+    id = "temp"
+    [keys.widget.config]
+      sensorKey = "nvme_composite"
+      label = "NVME"
+      fillColor = "#d497de"
 
 #####################################################
 # Row 3
