@@ -46,13 +46,16 @@ done
 {{- end }}
 
 # add NodeSources' NodeJS repository to get the latest NodeJS version
-node_repo="node_18.x"
+node_repo="node_20.x"
 release="{{ .chezmoi.osRelease.versionCodename }}"
 keyring="/usr/share/keyrings/nodesource.gpg"
 {{- if ne .chezmoi.username "root" }}
 curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee $keyring >/dev/null
 sudo chmod a+r $keyring
 sudo sh -c "echo deb [signed-by=$keyring] https://deb.nodesource.com/$node_repo $release main > /etc/apt/sources.list.d/nodesource.list"
+echo "Package: nodejs" | sudo tee /etc/apt/preferences.d/nodejs > /dev/null
+echo "Pin: origin deb.nodesource.com" | sudo tee -a /etc/apt/preferences.d/nodejs > /dev/null
+echo "Pin-Priority: 600" | sudo tee -a /etc/apt/preferences.d/nodejs > /dev/null
 {{- else }}
 curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | tee $keyring >/dev/null
 chmod a+r $keyring
