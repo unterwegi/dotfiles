@@ -30,6 +30,7 @@ return {
                 'toml',
                 'typescript',
                 'vim',
+                'vimdoc',
                 'yaml'
             },
             sync_install = true,
