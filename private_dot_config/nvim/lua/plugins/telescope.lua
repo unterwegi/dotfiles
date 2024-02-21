@@ -17,6 +17,7 @@ return {
             telescope.setup {
                 defaults = {
                     theme = "ivy",
+                    file_ignore_patterns = { "^.git/" }
                 },
                 pickers = {
                     find_files = {
@@ -25,9 +26,9 @@ return {
                         no_ignore_parent = true,
                     },
                     live_grep = {
-                       additional_args = {
-                           "-u"
-                       },
+                        additional_args = {
+                            "-u"
+                        },
                     },
                 },
             }
