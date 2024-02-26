@@ -27,7 +27,7 @@ return {
                     },
                     live_grep = {
                         additional_args = {
-                            "-u"
+                            "-uu"
                         },
                     },
                 },
