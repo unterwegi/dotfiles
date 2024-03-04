@@ -2,7 +2,7 @@ registries:
   - type: standard
     ref: v4.142.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-  - name: twpayne/chezmoi@v2.47.0
+  - name: twpayne/chezmoi@v2.47.1
   - name: starship/starship@v1.17.1
   - name: BurntSushi/ripgrep@14.1.0
   - name: sharkdp/fd@v9.0.0
