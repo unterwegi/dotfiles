@@ -1,4 +1,4 @@
-# taken from https://github.com/direnv/direnv/wiki/Python/#poetry
+# based on https://github.com/direnv/direnv/wiki/Python/#poetry
 layout_poetry() {
     PYPROJECT_TOML="${PYPROJECT_TOML:-pyproject.toml}"
     if [[ ! -f "$PYPROJECT_TOML" ]]; then
@@ -9,7 +9,7 @@ layout_poetry() {
     if [[ -d ".venv" ]]; then
         VIRTUAL_ENV="$(pwd)/.venv"
     else
-        VIRTUAL_ENV=$(poetry env info --path 2>/dev/null ; true)
+        VIRTUAL_ENV=$(poetry env list --full-path 2>/dev/null | cut -d' ' -f1 ; true)
     fi
 
     if [[ -z $VIRTUAL_ENV || ! -d $VIRTUAL_ENV ]]; then
