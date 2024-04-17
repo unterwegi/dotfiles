@@ -17,7 +17,7 @@ return {
             telescope.setup {
                 defaults = {
                     theme = "ivy",
-                    file_ignore_patterns = { "^.git/" }
+                    file_ignore_patterns = { "^.git/", ".o$", ".gcno$", ".gcda$", "^.cache/clangd", ".pyc$" }
                 },
                 pickers = {
                     find_files = {
