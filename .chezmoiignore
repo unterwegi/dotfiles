@@ -1,6 +1,7 @@
 LICENSE
 README.md
 renovate.json
+bootstrap.sh
 {{- if ne .chezmoi.hostname "normandy-linux" }}
 .config/deckmaster
 .config/systemd/user/streamdeck.*

@@ -11,16 +11,10 @@ The setup scripts are aware of the following Linux flavors:
 
 ## Bootstrap
 
-Install [chezmoi](https://www.chezmoi.io/install/)
+Optionally, install [chezmoi](https://www.chezmoi.io/install/) beforehand. The `bootstrap.sh` script does it automatically if it can't find it.
 
 ```bash
-chezmoi init --apply unterwegi
-```
-
-### One Liner
-
-```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply unterwegi
+./bootstrap.sh
 ```
 
 ## Software needed for my setup
