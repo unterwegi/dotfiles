@@ -10,34 +10,11 @@ if not test -d $__fish_config_dir/completions
   mkdir -p $__fish_config_dir/completions
 end
 
-if command -q chezmoi
-  echo "setting up chezmoi completion"
-  chezmoi completion fish --output=$__fish_config_dir/completions/chezmoi.fish
-end
-
-if command -q kustomize
-  echo "setting up kustomize completion"
-  kustomize completion fish > $__fish_config_dir/completions/kustomize.fish
-end
-
-if command -q kubectl
-  echo "setting up kubectl completion"
-  kubectl completion fish > $__fish_config_dir/completions/kubectl.fish
-end
-
-if command -q helm
-  echo "setting up helm completion"
-  helm completion fish > $__fish_config_dir/completions/helm.fish
-end
-
-if command -q minikube
-  echo "setting up minikube completion"
-  minikube completion fish > $__fish_config_dir/completions/minikube.fish
-end
-
-if command -q k9s
-  echo "setting up k9s completion"
-  k9s completion fish > $__fish_config_dir/completions/k9s.fish
+for tool in chezmoi kustomize kubectl helm minikube k9s devpod
+  if command -q $tool
+    echo "setting up $tool completion"
+    $tool completion fish > $__fish_config_dir/completions/$tool.fish
+  end
 end
 
 if command -q pipenv

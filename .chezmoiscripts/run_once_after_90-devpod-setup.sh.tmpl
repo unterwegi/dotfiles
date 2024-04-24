@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+# rerun completion setup when the aqua.yaml has changed
+# .config/aqua.yaml hash: {{ include "private_dot_config/aqua.yaml" | sha256sum }}
+echo -e "\033[0;32m>>>>> Preparing usage of devpod <<<<<\033[0m"
+devpod context set-options -o TELEMETRY=false
+
+if devpod provider list | grep -q "docker"; then
+  devpod provider update docker
+else
+  devpod provider add docker
+fi
+echo -e "\033[0;32m>>>>> Finished preparing usage of devpod <<<<<\033[0m"

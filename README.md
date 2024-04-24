@@ -43,6 +43,7 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 
 - [Github CLI](https://github.com/cli/cli)
 - [chezmoi](https://github.com/twpayne/chezmoi)
+- [devpod](https://github.com/loft-sh/devpod)
 - [direnv](https://github.com/direnv/direnv)
 - [dive](https://github.com/wagoodman/dive)
 - [exa](https://github.com/ogham/exa)
