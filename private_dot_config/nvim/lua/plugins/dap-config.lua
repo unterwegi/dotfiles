@@ -19,6 +19,7 @@ return {
             "nvim-telescope/telescope.nvim",
             "nvim-telescope/telescope-dap.nvim",
             "lewis6991/gitsigns.nvim",
+            "nvim-neotest/nvim-nio",
         },
         config = function()
             local dap, dapui, gs = require("dap"), require("dapui"), require("gitsigns")
