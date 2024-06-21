@@ -21,7 +21,7 @@ packages:
   - name: rclone/rclone@v1.67.0
   - name: junegunn/fzf@0.53.0
   - name: lsd-rs/lsd@v1.1.2
-  - name: jmorganca/ollama@v0.1.42
+  - name: jmorganca/ollama@v0.1.45
   - name: golang/tools/goimports@v0.16.1
   - name: golangci/golangci-lint@v1.59.1
   - name: wagoodman/dive@v0.12.0
