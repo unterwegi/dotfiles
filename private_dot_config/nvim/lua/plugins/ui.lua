@@ -81,9 +81,7 @@ return {
     },
     {
         "folke/trouble.nvim",
-        opts = {
-            height = 20,
-        }
+        config = true,
     },
     {
         "folke/todo-comments.nvim",

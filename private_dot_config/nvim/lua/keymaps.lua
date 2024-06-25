@@ -85,8 +85,8 @@ keymap.set("n", "<Leader>gg", function()
 end, { desc = "Open Neogit" })
 
 -- Trouble
-keymap.set("n", "<Leader>rr", ":TroubleToggle<CR>")
-keymap.set("n", "<Leader>rl", ":TroubleToggle lsp_references<CR>")
+keymap.set("n", "<Leader>rr", ":Trouble diagnostics toggle filter.buf=0<CR>")
+keymap.set("n", "<Leader>rl", ":Trouble lsp toggle<CR>")
 
 -- Formatting
 keymap.set("n", "<Leader>pp", function()
