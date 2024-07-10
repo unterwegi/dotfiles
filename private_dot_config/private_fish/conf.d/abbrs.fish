@@ -12,9 +12,8 @@ if command -q git
   abbr gd 'git diff'
   abbr gds 'git diff --staged'
   abbr gdc 'git diff --cached'
-  abbr gr 'git restore'
-  abbr grs 'git restore --staged'
-  abbr grc 'git restore --cached'
+  abbr grm 'git rebase origin/main'
+  abbr grc 'git rebase --continue'
 end
 
 # nvim
