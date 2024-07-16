@@ -2,7 +2,10 @@
 #!/bin/bash
 set -eufo pipefail
 
-# List of NPM packages to install globally
+# set my global prefix to my users .local directory, so I don't need to use "npm sudo"
+npm config set prefix ~/.local
+
+# List of NPM packages to install for my user
 packages=(
   @compodoc/live-server
 )
@@ -10,11 +13,7 @@ packages=(
 for package in ${packages[@]}; do
   if [ "$(npm ls -g $package 2> /dev/null)" != $package ]; then
     echo "installing $package via npm"
-{{- if ne .chezmoi.username "root" }}
-    sudo npm install -g $package
-{{- else }}
     npm install -g $package
-{{- end }}
   fi
 done
 {{ end -}}
