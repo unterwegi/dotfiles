@@ -41,6 +41,7 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 
 ## Software managed through [aqua](https://github.com/aquaproj/aqua)
 
+- [AWS CLI](https://github.com/aws/aws-cli/tree/v2)
 - [Github CLI](https://github.com/cli/cli)
 - [chezmoi](https://github.com/twpayne/chezmoi)
 - [devpod](https://github.com/loft-sh/devpod)
