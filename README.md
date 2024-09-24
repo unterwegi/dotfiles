@@ -62,7 +62,6 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 - [modd](https://github.com/cortesi/modd)
 - [navi](https://github.com/denisidoro/navi)
 - [neovim](https://github.com/neovim/neovim)
-- [ollama](https://github.com/jmorganca/ollama)
 - [rclone](https://github.com/rclone/rclone)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [starship](https://github.com/starship/starship)
