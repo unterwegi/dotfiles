@@ -140,7 +140,7 @@ return {
             local prettierd = { formatCommand = 'prettierd "${INPUT}"', formatStdin = true }
             local shfmt = { formatCommand = "shfmt -i 2 -ci", formatStdin = true }
             -- TODO does a generic post save autocmd make more sense here for trailing whitespace removal?
-            local trailing_whitespace = { formatCommand = "sed -E -e 's/[[:space:]]*$//'", formatStdin = true}
+            local trailing_whitespace = { formatCommand = "sed -E -e 's/[[:space:]]*$//'", formatStdin = true }
             lspconfig.efm.setup {
                 init_options = { documentFormatting = true },
                 filetypes = { "cpp", "html", "json", "less", "lua", "markdown", "python", "sh", "text", "yaml" },
@@ -184,6 +184,9 @@ return {
                             },
                             pyflakes = {
                                 enabled = false
+                            },
+                            pylsp_mypy = {
+                                overrides = { "--ignore-missing-imports", true },
                             },
                             yapf = {
                                 enabled = false
