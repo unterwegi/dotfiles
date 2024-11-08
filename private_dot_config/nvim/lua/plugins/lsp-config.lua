@@ -122,6 +122,7 @@ return {
                 settings = {
                     json = {
                         schemas = require("schemastore").json.schemas(),
+                        validate = { enable = true },
                     }
                 }
             }
@@ -232,49 +233,36 @@ return {
                             "!include_dir_merge_named",
                             "!secret",
                             "!env_var",
+                            "!reference sequence",
                         },
-                        schemas = {
-                            kubernetes = {
-                                "01-namespace.yaml",
-                                "deployment.yaml",
-                                "daemonset.yaml",
-                                "statefulset.yaml",
-                                "service.yaml",
-                                "pv.yaml",
-                                "pvc.yaml",
-                                "configmap.yaml",
-                                "secret.yaml",
-                                "rbac.yaml",
-                                "crd.yaml",
-                                "storageclass.yaml",
-                                "cronjob.yaml"
+                        schemaStore = {
+                            enable = false,
+                            url = "",
+                        },
+                        schemas = require('schemastore').yaml.schemas({
+                            extra = {
+                                {
+                                    name = "kubernetes.yaml",
+                                    description = "Kubernetes resource schema specs",
+                                    fileMatch = {
+                                        "01-namespace.yaml",
+                                        "deployment.yaml",
+                                        "daemonset.yaml",
+                                        "statefulset.yaml",
+                                        "service.yaml",
+                                        "pv.yaml",
+                                        "pvc.yaml",
+                                        "configmap.yaml",
+                                        "secret.yaml",
+                                        "rbac.yaml",
+                                        "crd.yaml",
+                                        "storageclass.yaml",
+                                        "cronjob.yaml"
+                                    },
+                                    url = "https://github.com/yannh/kubernetes-json-schema/raw/refs/heads/master/master-standalone-strict/all.json",
+                                },
                             },
-                            ["https://raw.githubusercontent.com/docker/compose/master/compose/config/compose_spec.json"] = {
-                                "docker-compose.yml",
-                                "docker-compose.yaml"
-                            },
-                            ["https://json.schemastore.org/github-workflow"] = {
-                                ".github/workflows/**.yml",
-                                ".github/workflows/**.yaml"
-                            },
-                            ["https://json.schemastore.org/github-actions"] = {
-                                "action.yml",
-                                "action.yaml"
-                            },
-                            ["https://json.schemastore.org/gitlab-ci"] = ".gitlab-ci.yml",
-                            ["https://json.schemastore.org/kustomization"] = {
-                                "kustomization.yml",
-                                "kustomization.yaml"
-                            },
-                            ["https://json.schemastore.org/pre-commit-config"] = {
-                                ".pre-commit-config.yml",
-                                ".pre-commit-config.yaml",
-                            },
-                            ["https://raw.githubusercontent.com/JJGadgets/flux2-schemas/main/helmrelease-helm-v2beta1.json"] = {
-                                "helmrelease.yaml",
-                                "helm-release.yaml"
-                            }
-                        }
+                        }),
                     }
                 }
             }
