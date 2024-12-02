@@ -26,5 +26,5 @@ packages:
   - name: wagoodman/dive@v0.12.0
   - name: kubernetes/minikube@v1.34.0
   - name: mike-engel/jwt-cli@6.2.0
-  - name: loft-sh/devpod@v0.5.21
+  - name: loft-sh/devpod@v0.6.3
   - name: aws/aws-cli@2.17.24
