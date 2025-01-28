@@ -5,6 +5,7 @@ if command -q git
   abbr gaa 'git add --all'
   abbr gc 'git commit'
   abbr gcm 'git commit -m'
+  abbr gca 'git commit --amend'
   abbr gs 'git status'
   abbr gp 'git push'
   abbr gpl 'git pull'
