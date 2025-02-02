@@ -1,5 +1,6 @@
 {
-    "layer": "top",
+    "layer": "bottom",
+    "mode": "dock",
     "position": "top",
     "height": 32,
     "spacing": 5,
@@ -18,7 +19,8 @@
     ],
     "hyprland/window": {
         "max-length": 200,
-        "separate-outputs": true
+        "separate-outputs": true,
+        "icon": true
     },
     "tray": {
         "spacing": 5,
