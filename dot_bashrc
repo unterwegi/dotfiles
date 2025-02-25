@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # path
-export PATH="$HOME/.local/share/aquaproj-aqua/bin:$PATH:$HOME/bin:$HOME/.local/bin"
+export PATH="$HOME/.local/share/aquaproj-aqua/bin:$HOME/.cargo/bin:$PATH:$HOME/bin:$HOME/.local/bin"
 
 # aqua setup
 export AQUA_GLOBAL_CONFIG=$HOME/.config/aqua.yaml
