@@ -32,6 +32,7 @@ return {
                     "shellcheck", -- implicitly used by bash-language-server
                     "vale",
                     "yamllint",
+                    "buf",
 
                     -- file specific language servers
                     "ansible-language-server",
@@ -41,6 +42,7 @@ return {
                     "lua-language-server",
                     "json-lsp",
                     "yaml-language-server",
+                    "protols",
 
                     -- main language servers
                     "efm",

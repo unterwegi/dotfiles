@@ -13,6 +13,7 @@ return {
                 text = { "vale", },
                 yaml = { "yamllint", },
                 go = { "golangcilint", },
+                proto = { "buf_lint", },
             }
 
             local markdownlint = lint.linters.markdownlint

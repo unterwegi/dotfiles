@@ -115,6 +115,12 @@ return {
                 }
             }
 
+            -- protols
+            lspconfig.protols.setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+            }
+
             -- jsonls
             lspconfig.jsonls.setup {
                 capabilities = capabilities,
@@ -134,6 +140,7 @@ return {
             clangd_capabilities.offsetEncoding = "utf-8"
             lspconfig.clangd.setup {
                 capabilities = clangd_capabilities,
+                filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "h", "hpp" },
                 on_attach = on_attach,
             }
 
