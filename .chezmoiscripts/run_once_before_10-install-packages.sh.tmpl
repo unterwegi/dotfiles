@@ -43,7 +43,6 @@ packages+=(
   libxmlsec1-dev
   libffi-dev
   liblzma-dev
-  cargo
 )
 
 {{ if (eq .chezmoi.osRelease.id "ubuntu") -}}
@@ -108,7 +107,6 @@ packages+=(
   python-poetry
   python-pipenv
   yay
-  rust
 )
 
 for package in ${packages[@]}; do
