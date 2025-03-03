@@ -1,6 +1,6 @@
 registries:
   - type: standard
-    ref: v4.319.2 # renovate: depName=aquaproj/aqua-registry
+    ref: v4.323.0 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: twpayne/chezmoi@v2.60.0
   - name: starship/starship@v1.22.1
