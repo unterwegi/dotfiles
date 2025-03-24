@@ -67,6 +67,7 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [starship](https://github.com/starship/starship)
 - [stern](https://github.com/stern/stern)
+- [vault](https://github.com/hashicorp/vault)
 - [yq](https://github.com/mikefarah/yq)
 
 See [aqua.yml](private_dot_config/aqua.yaml) for reference.
