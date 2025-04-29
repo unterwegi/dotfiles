@@ -28,11 +28,16 @@ return {
             }
 
             -- Signcolumn symbols
-            local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
-            for type, icon in pairs(signs) do
-                local hl = "DiagnosticSign" .. type
-                vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-            end
+            vim.diagnostic.config({
+                signs = {
+                    text = {
+                        [vim.diagnostic.severity.ERROR] = "󰅚 ",
+                        [vim.diagnostic.severity.WARN] = "󰀪 ",
+                        [vim.diagnostic.severity.HINT] = "󰌶 ",
+                        [vim.diagnostic.severity.INFO] = " ",
+                    }
+                },
+            })
 
             -- Show diagnostics on hover
             vim.o.updatetime = 150
@@ -68,7 +73,6 @@ return {
                 vim.cmd([[autocmd CursorMoved <buffer> ++once set eventignore=""]])
             end
 
-            local lspconfig = require("lspconfig")
             local capabilities = get_client_capabilities()
             local on_attach = function(_, bufnr)
                 require "lsp_signature".on_attach()
@@ -87,25 +91,28 @@ return {
             end
 
             -- ansiblels
-            lspconfig.ansiblels.setup {
+            vim.lsp.config.ansiblels = {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }
+            vim.lsp.enable("ansiblels")
 
             -- bashls
-            lspconfig.bashls.setup {
+            vim.lsp.config.bashls = {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }
+            vim.lsp.enable("bashls")
 
             -- dockerls
-            lspconfig.dockerls.setup {
+            vim.lsp.config.dockerls = {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }
+            vim.lsp.enable("dockerls")
 
             -- gopls
-            lspconfig.gopls.setup {
+            vim.lsp.config.gopls = {
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {
@@ -114,15 +121,17 @@ return {
                     }
                 }
             }
+            vim.lsp.enable("gopls")
 
             -- protols
-            lspconfig.protols.setup {
+            vim.lsp.config.protols = {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }
+            vim.lsp.enable("protols")
 
             -- jsonls
-            lspconfig.jsonls.setup {
+            vim.lsp.config.jsonls = {
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {
@@ -132,24 +141,26 @@ return {
                     }
                 }
             }
+            vim.lsp.enable("jsonls")
 
             -- clangd
             -- manually need to set offsetEncoding to "utf-8"
             -- see https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428
             local clangd_capabilities = get_client_capabilities()
             clangd_capabilities.offsetEncoding = "utf-8"
-            lspconfig.clangd.setup {
+            vim.lsp.config.clangd = {
                 capabilities = clangd_capabilities,
                 filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "h", "hpp" },
                 on_attach = on_attach,
             }
+            vim.lsp.enable("clangd")
 
             -- efm (general purpose LSP to integrate some formatters)
             local prettierd = { formatCommand = 'prettierd "${INPUT}"', formatStdin = true }
             local shfmt = { formatCommand = "shfmt -i 2 -ci", formatStdin = true }
             -- TODO does a generic post save autocmd make more sense here for trailing whitespace removal?
             local trailing_whitespace = { formatCommand = "sed -E -e 's/[[:space:]]*$//'", formatStdin = true }
-            lspconfig.efm.setup {
+            vim.lsp.config.efm = {
                 init_options = { documentFormatting = true },
                 filetypes = { "cpp", "html", "json", "less", "lua", "markdown", "python", "sh", "text", "yaml" },
                 settings = {
@@ -164,9 +175,10 @@ return {
                     }
                 }
             }
+            vim.lsp.enable("efm")
 
             -- python
-            lspconfig.pylsp.setup {
+            vim.lsp.config.pylsp = {
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {
@@ -203,9 +215,10 @@ return {
                     }
                 }
             }
+            vim.lsp.enable("pylsp")
 
             -- lua_ls
-            lspconfig.lua_ls.setup {
+            vim.lsp.config.lua_ls = {
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {
@@ -226,9 +239,10 @@ return {
                     }
                 }
             }
+            vim.lsp.enable("lua_ls")
 
             -- yamlls
-            lspconfig.yamlls.setup {
+            vim.lsp.config.yamlls = {
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {
@@ -266,13 +280,15 @@ return {
                                         "storageclass.yaml",
                                         "cronjob.yaml"
                                     },
-                                    url = "https://github.com/yannh/kubernetes-json-schema/raw/refs/heads/master/master-standalone-strict/all.json",
+                                    url =
+                                    "https://github.com/yannh/kubernetes-json-schema/raw/refs/heads/master/master-standalone-strict/all.json",
                                 },
                             },
                         }),
                     }
                 }
             }
+            vim.lsp.enable("yamlls")
         end
     },
 }

@@ -2,7 +2,6 @@ return {
     -- Telescope
     {
         "nvim-telescope/telescope.nvim",
-        branch = "0.1.x",
         dependencies = {
             "natecraddock/telescope-zf-native.nvim",
             "nvim-lua/plenary.nvim",
