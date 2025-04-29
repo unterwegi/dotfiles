@@ -13,10 +13,6 @@ keymap.set("n", "<Leader>cc", ":close<CR>", { desc = "Close current window" })
 keymap.set({ "n", "v" }, "ö", ":", { desc = "Enter command mode" })
 keymap.set({ "n", "v" }, "ä", "@", { desc = "Execute macro from register" })
 keymap.set({ "n", "v" }, "ää", "@@", { desc = "Execute last macro again" })
-vim.cmd.inoreabbrev({ "üü", "[" })
-vim.cmd.inoreabbrev({ "++", "]" })
-vim.cmd.inoreabbrev({ "ÜÜ", "{" })
-vim.cmd.inoreabbrev({ "**", "}" })
 keymap.set("n", "<Leader>af", "<C-^>") -- alternate file switching
 
 -- Easier cursor movement on wrapped line
