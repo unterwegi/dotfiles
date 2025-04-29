@@ -1,5 +1,4 @@
 return {
-    "mfussenegger/nvim-dap",
     {
         "jay-babu/mason-nvim-dap.nvim",
         dependencies = {
@@ -13,16 +12,16 @@ return {
         config = true,
     },
     {
-        "rcarriga/nvim-dap-ui",
+        "mfussenegger/nvim-dap",
         dependencies = {
-            "mfussenegger/nvim-dap",
             "nvim-telescope/telescope.nvim",
             "nvim-telescope/telescope-dap.nvim",
             "lewis6991/gitsigns.nvim",
             "nvim-neotest/nvim-nio",
+            { "igorlfs/nvim-dap-view", opts = {} },
         },
         config = function()
-            local dap, dapui, gs = require("dap"), require("dapui"), require("gitsigns")
+            local dap, dv, gs = require("dap"), require("dap-view"), require("gitsigns")
             local telescope = require("telescope")
             local keymap = vim.keymap
 
@@ -55,50 +54,25 @@ return {
                 dap.clear_breakpoints()
                 require("notify")("Breakpoints cleared", "warn")
             end, { desc = "Clear all Breakpoints" })
-            keymap.set({"n", "v"}, "<Leader>dw", function()
-                dapui.elements.watches.add()
+            keymap.set({ "n", "v" }, "<Leader>dw", function()
+                dv.add_expr()
             end, { desc = "Watch Current Expression" })
-            keymap.set({"n", "v"}, "<Leader>dd", dapui.eval, { desc = "Evaluate Current Expression" })
 
-            dapui.setup({
-                layouts = { {
-                    -- deviation from default UI: no scopes window as this info is shown as virtual text
-                    elements = { {
-                        id = "breakpoints",
-                        size = 0.15
-                    }, {
-                        id = "stacks",
-                        size = 0.35
-                    }, {
-                        id = "watches",
-                        size = 0.5
-                    } },
-                    position = "left",
-                    size = 80
-                }, {
-                    elements = { {
-                        id = "repl",
-                        size = 0.5
-                    }, {
-                        id = "console",
-                        size = 0.5
-                    } },
-                    position = "bottom",
-                    size = 12
-                } },
-            })
-
-            dap.listeners.after.event_initialized["dapui_config"] = function()
-                gs.toggle_current_line_blame()
-                dapui.open()
+            dap.listeners.before.attach["dap-view-config"] = function()
+                gs.toggle_current_line_blame(false)
+                dv.open()
             end
-            dap.listeners.before.event_terminated["dapui_config"] = function()
-                gs.toggle_current_line_blame()
-                dapui.close()
+            dap.listeners.before.launch["dap-view-config"] = function()
+                gs.toggle_current_line_blame(false)
+                dv.open()
             end
-            dap.listeners.before.event_exited["dapui_config"] = function()
-                gs.toggle_current_line_blame()
-                dapui.close()
+            dap.listeners.before.event_terminated["dap-view-config"] = function()
+                gs.toggle_current_line_blame(true)
+                dv.close()
+            end
+            dap.listeners.before.event_exited["dap-view-config"] = function()
+                gs.toggle_current_line_blame(true)
+                dv.close()
             end
         end
     },
