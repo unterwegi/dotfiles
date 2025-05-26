@@ -18,7 +18,7 @@ packages:
   - name: stern/stern@v1.32.0
   - name: denisidoro/navi@v2.24.0
   - name: cortesi/modd@v0.8
-  - name: rclone/rclone@v1.69.2
+  - name: rclone/rclone@v1.69.3
   - name: junegunn/fzf@v0.62.0
   - name: lsd-rs/lsd@v1.1.5
   - name: golang/tools/goimports@v0.16.1
