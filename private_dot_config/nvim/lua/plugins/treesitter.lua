@@ -1,9 +1,11 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
+        branch = "main",
+        lazy = false,
         build = ":TSUpdate",
-        opts = {
-            ensure_installed = {
+        config = function()
+            require("nvim-treesitter").install({
                 'bash',
                 'comment',
                 'cmake',
@@ -32,17 +34,19 @@ return {
                 'vim',
                 'vimdoc',
                 'yaml'
-            },
-            sync_install = true,
-            highlight = {
-                enable = true
-            },
-            autotag = {
-                enable = true,
-            }
-        },
-        config = function(_, opts)
-            require("nvim-treesitter.configs").setup(opts)
+            })
+
+            -- Enable treesitter for all file types that have a parser installed
+            local parsersInstalled = require("nvim-treesitter").get_installed('parsers')
+            for _, parser in pairs(parsersInstalled) do
+                local filetypes = vim.treesitter.language.get_filetypes(parser)
+                vim.api.nvim_create_autocmd({ "FileType" }, {
+                    pattern = filetypes,
+                    callback = function()
+                        vim.treesitter.start()
+                    end,
+                })
+            end
         end,
     },
 }
