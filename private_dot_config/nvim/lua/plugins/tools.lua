@@ -62,7 +62,7 @@ return {
                 pattern = "MasonToolsUpdateCompleted",
                 callback = function()
                     -- install/update python-lsp-server plugins
-                    local pylsp_packages = { "python-lsp-black", "pyls-isort", "pylsp-mypy" }
+                    local pylsp_packages = { "python-lsp-ruff", "pylsp-mypy" }
                     local pylsp_path = vim.fn.resolve(vim.fn.stdpath("data") .. "/mason/packages/python-lsp-server")
                     local pylsp_pip = pylsp_path .. "/venv/bin/python -m pip"
 

@@ -182,33 +182,15 @@ return {
                 on_attach = on_attach,
                 settings = {
                     pylsp = {
-                        configurationSources = { "flake8" },
                         plugins = {
-                            black = {
+                            ruff = {
                                 enabled = true,
-                                line_length = 120
-                            },
-                            flake8 = {
-                                enabled = true,
-                                maxLineLength = 120
-                            },
-                            autopep8 = {
-                                enabled = false,
-                            },
-                            mccabe = {
-                                enabled = false
-                            },
-                            pycodestyle = {
-                                enabled = false
-                            },
-                            pyflakes = {
-                                enabled = false
+                                formatEnabled = true,
+                                format = { "I" },
+                                line_length = 120,
                             },
                             pylsp_mypy = {
                                 overrides = { "--ignore-missing-imports", true },
-                            },
-                            yapf = {
-                                enabled = false
                             },
                         }
                     }
