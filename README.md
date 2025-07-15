@@ -65,6 +65,7 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 - [neovim](https://github.com/neovim/neovim)
 - [rclone](https://github.com/rclone/rclone)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [ruff](https://github.com/astral-sh/ruff)
 - [starship](https://github.com/starship/starship)
 - [stern](https://github.com/stern/stern)
 - [tree-sitter](https://github.com/tree-sitter/tree-sitter)
