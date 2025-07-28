@@ -31,4 +31,4 @@ packages:
   - name: fullstorydev/grpcurl@v1.9.3
   - name: hashicorp/vault@v1.20.0
   - name: tree-sitter/tree-sitter@v0.25.8
-  - name: astral-sh/ruff@0.12.4
+  - name: astral-sh/ruff@0.12.5
