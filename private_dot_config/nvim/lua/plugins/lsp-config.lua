@@ -186,7 +186,7 @@ return {
                             ruff = {
                                 enabled = true,
                                 formatEnabled = true,
-                                format = { "I" },
+                                format = { "E", "F", "I", "W" },
                                 line_length = 120,
                             },
                             pylsp_mypy = {
