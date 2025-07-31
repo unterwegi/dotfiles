@@ -187,7 +187,7 @@ return {
                                 enabled = true,
                                 formatEnabled = true,
                                 format = { "E", "F", "I", "W" },
-                                line_length = 120,
+                                lineLength = 120,
                             },
                             pylsp_mypy = {
                                 overrides = { "--ignore-missing-imports", true },
