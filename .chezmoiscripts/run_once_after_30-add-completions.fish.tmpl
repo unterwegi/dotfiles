@@ -27,5 +27,10 @@ if command -q poetry
   poetry completions fish > $__fish_config_dir/completions/poetry.fish
 end
 
+if command -q poetry
+  echo "setting up glab completion"
+  glab completion -s fish > $__fish_config_dir/completions/glab.fish
+end
+
 echo -e "\033[0;32m>>>>> Finish Setting Fish Completions <<<<<\033[0m"
 {{ end -}}
