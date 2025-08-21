@@ -71,6 +71,12 @@ keymap.set("n", "<Leader>fs", builtin.grep_string, { desc = "Find String in File
 keymap.set("n", "<Leader>fb", builtin.buffers, { desc = "Find Buffers" })
 keymap.set("n", "<Leader>fh", builtin.help_tags, { desc = "Show Help Tags" })
 keymap.set("n", "<leader>fp", extensions.projections.projections, { desc = "Project Browser" })
+keymap.set("n", "<Leader>fl", function()
+    require('telescope.builtin').lsp_document_symbols({ symbols = { 'function', 'method' } })
+end, { desc = "Buffer Function List" })
+keymap.set("n", "<Leader>fL", function()
+    require('telescope.builtin').lsp_workspace_symbols({ symbols = { 'function', 'method' } })
+end, { desc = "Workspace Function List" })
 keymap.set("n", "<leader>gw", extensions.git_worktree.git_worktrees, { desc = "GIT worktree list" })
 keymap.set("n", "<leader>gn", extensions.git_worktree.create_git_worktree, { desc = "New GIT worktree" })
 
