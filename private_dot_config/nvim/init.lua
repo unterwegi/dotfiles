@@ -22,6 +22,9 @@ require("lazy").setup("plugins")
 require("keymaps")
 require("autocmds")
 
+-- Global setup
+Snacks.indent.enable()
+
 -- Some custom filetype associations
 vim.filetype.add({
   extension = {

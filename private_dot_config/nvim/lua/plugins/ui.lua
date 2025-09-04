@@ -19,6 +19,16 @@ return {
         end
     },
     {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {
+            image = { enabled = true },
+            indent = { enabled = true, animate = { enabled = false } },
+            input = { enabled = true },
+        },
+    },
+    {
         "nvim-lualine/lualine.nvim",
         dependencies = { "kyazdani42/nvim-web-devicons" },
         opts = {
@@ -132,18 +142,5 @@ return {
             require("which-key").setup()
         end,
     },
-    {
-        "stevearc/dressing.nvim",
-        opts = {
-            input = {
-                override = function(conf)
-                    conf.col = -1
-                    conf.row = 0
-                    return conf
-                end,
-            },
-        }
-    },
-    "lukas-reineke/indent-blankline.nvim",
     "davidgranstrom/nvim-markdown-preview",
 }
