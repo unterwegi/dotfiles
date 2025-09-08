@@ -30,6 +30,6 @@ packages:
   - name: aws/aws-cli@2.17.24
   - name: fullstorydev/grpcurl@v1.9.3
   - name: hashicorp/vault@v1.20.3
-  - name: tree-sitter/tree-sitter@v0.25.8
+  - name: tree-sitter/tree-sitter@v0.25.9
   - name: astral-sh/ruff@0.12.12
   - name: gitlab.com/gitlab-org/cli@v1.67.0
