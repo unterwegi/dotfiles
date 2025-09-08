@@ -11,7 +11,7 @@ packages:
   - name: cli/cli@v2.78.0
   - name: direnv/direnv@v2.37.1
   - name: mikefarah/yq@v4.47.1
-  - name: kubernetes/kubectl@v1.33.4
+  - name: kubernetes/kubectl@v1.34.0
   - name: kubernetes-sigs/kustomize@kustomize/v5.7.1
   - name: helm/helm@v3.18.6
   - name: derailed/k9s@v0.50.9
