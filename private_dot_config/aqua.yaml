@@ -31,5 +31,5 @@ packages:
   - name: fullstorydev/grpcurl@v1.9.3
   - name: hashicorp/vault@v1.20.3
   - name: tree-sitter/tree-sitter@v0.25.9
-  - name: astral-sh/ruff@0.13.1
+  - name: astral-sh/ruff@0.13.2
   - name: gitlab.com/gitlab-org/cli@v1.72.0
