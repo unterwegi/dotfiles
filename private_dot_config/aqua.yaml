@@ -20,7 +20,7 @@ packages:
   - name: cortesi/modd@v0.8
   - name: rclone/rclone@v1.71.1
   - name: junegunn/fzf@v0.65.2
-  - name: lsd-rs/lsd@v1.1.5
+  - name: lsd-rs/lsd@v1.2.0
   - name: golang/tools/goimports@v0.20.0
   - name: golangci/golangci-lint@v2.5.0
   - name: wagoodman/dive@v0.13.1
