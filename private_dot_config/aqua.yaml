@@ -14,7 +14,7 @@ packages:
   - name: kubernetes/kubectl@v1.34.1
   - name: kubernetes-sigs/kustomize@kustomize/v5.7.1
   - name: helm/helm@v3.19.0
-  - name: derailed/k9s@v0.50.13
+  - name: derailed/k9s@v0.50.15
   - name: stern/stern@v1.33.0
   - name: denisidoro/navi@v2.24.0
   - name: cortesi/modd@v0.8
