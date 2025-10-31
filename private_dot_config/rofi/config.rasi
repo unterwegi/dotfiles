@@ -1,0 +1,10 @@
+configuration {
+    modes: "drun";
+	font: "CaskaydiaCoveNerdFontMono 12";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+}
+
+@theme "material"
