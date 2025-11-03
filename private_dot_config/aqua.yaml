@@ -32,4 +32,4 @@ packages:
   - name: hashicorp/vault@v1.21.0
   - name: tree-sitter/tree-sitter@v0.25.10
   - name: astral-sh/ruff@0.14.3
-  - name: gitlab.com/gitlab-org/cli@v1.74.0
+  - name: gitlab.com/gitlab-org/cli@v1.75.0
