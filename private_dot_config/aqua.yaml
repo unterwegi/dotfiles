@@ -4,7 +4,7 @@ registries:
 packages:
   - name: twpayne/chezmoi@v2.68.0
   - name: starship/starship@v1.24.1
-  - name: BurntSushi/ripgrep@14.1.1
+  - name: BurntSushi/ripgrep@15.1.0
   - name: sharkdp/fd@v10.3.0
   - name: ogham/exa@v0.10.1
   - name: neovim/neovim@v0.11.5
