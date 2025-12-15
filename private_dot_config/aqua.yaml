@@ -8,12 +8,12 @@ packages:
   - name: sharkdp/fd@v10.3.0
   - name: ogham/exa@v0.10.1
   - name: neovim/neovim@v0.11.5
-  - name: cli/cli@v2.83.1
+  - name: cli/cli@v2.83.2
   - name: direnv/direnv@v2.37.1
   - name: mikefarah/yq@v4.49.2
-  - name: kubernetes/kubectl@v1.34.2
+  - name: kubernetes/kubectl@v1.34.3
   - name: kubernetes-sigs/kustomize@kustomize/v5.8.0
-  - name: helm/helm@v3.19.2
+  - name: helm/helm@v3.19.4
   - name: derailed/k9s@v0.50.16
   - name: stern/stern@v1.33.1
   - name: denisidoro/navi@v2.24.0
@@ -31,5 +31,5 @@ packages:
   - name: fullstorydev/grpcurl@v1.9.3
   - name: hashicorp/vault@v1.21.1
   - name: tree-sitter/tree-sitter@v0.26.3
-  - name: astral-sh/ruff@0.14.8
+  - name: astral-sh/ruff@0.14.9
   - name: gitlab.com/gitlab-org/cli@v1.79.0
