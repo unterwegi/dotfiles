@@ -6,3 +6,7 @@
     type = "git-repo"
     url = "https://github.com/go-nv/goenv.git"
     refreshPeriod = "168h"
+[".local/bin/hyprdynamicmonitors"]
+    type = "archive-file"
+    url = "https://github.com/fiffeek/hyprdynamicmonitors/releases/download/v1.4.0/hyprdynamicmonitors_Linux_x86_64.tar.gz"
+    path = "hyprdynamicmonitors"
