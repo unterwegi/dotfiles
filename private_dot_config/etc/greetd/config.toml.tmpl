@@ -3,7 +3,7 @@ vt = 2
 
 # The default session, also known as the greeter.
 [default_session]
-command = "tuigreet --cmd /usr/bin/Hyprland"
+command = "tuigreet --cmd 'uwsm start /usr/bin/Hyprland'"
 {{- if (eq .chezmoi.osRelease.id "fedora") }}
 user = "greetd"
 {{- else }}
