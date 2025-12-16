@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ -f /usr/libexec/hyprpolkitagent ]; then
+  exec /usr/libexec/hyprpolkitagent
+else
+  exec /usr/lib/hyprpolkitagent/hyprpolkitagent
+fi

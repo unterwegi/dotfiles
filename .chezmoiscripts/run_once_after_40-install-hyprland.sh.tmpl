@@ -5,16 +5,13 @@ echo -e "\033[0;32m>>>>> Begin Setting Up Hyprland <<<<<\033[0m"
 
 # install packages
 packages=(
-  cliphist                      # clipboard history
   rofi                          # app launcher
   greetd                        # login manager
   grim                          # screenshots
   hyprland                      # main package
   mako                          # notifications
-  polkit-kde-agent              # privilege elevation
+  hyprpolkitagent               # privilege elevation
   slurp                         # region screnshots
-  thunar                        # file manager
-  greetd-tuigreet               # console greeter for greetd
   swaybg                        # wallpaper
   ashell                        # status bar
   wl-clipboard                  # clipboard
@@ -42,8 +39,41 @@ for package in ${packages[@]}; do
   fi
 done
 
+{{ else if (eq .chezmoi.osRelease.id "fedora") -}}
+# Install packages - Fedora
+packages+=(
+  Thunar                        # file manager
+  tuigreet                      # console greeter for greetd
+)
+
+# add extra repos for some packages
+sudo dnf -y copr enable solopasha/hyprland
+sudo dnf -y copr enable killcrb/ashell
+
+# ensure the repo index is up-to-date
+{{- if ne .chezmoi.username "root" }}
+sudo dnf update
+{{- else }}
+dnf update
+{{- end }}
+
+for package in ${packages[@]}; do
+  if ! $(rpm -q $package &> /dev/null); then
+    echo "installing $package"
+{{- if ne .chezmoi.username "root" }}
+    sudo dnf install -y $package
+{{- else }}
+    dnf install -y $package
+{{- end }}
+  fi
+done
+
 {{ else if (eq .chezmoi.osRelease.id "arch" "endeavouros") -}}
 # Install packages - Arch/EndeavourOS
+packages+=(
+  thunar                        # file manager
+  greetd-tuigreet               # console greeter for greetd
+)
 
 for package in ${packages[@]}; do
   if [ "$(pacman -Qq $package 2> /dev/null)" != $package ]; then
@@ -71,7 +101,7 @@ done
 {{- end }}
 
 # Copy our greetd config from home to the system wide locatin
-# .config/etc/greetd/config.toml hash: {{ include "private_dot_config/etc/greetd/config.toml" | sha256sum }}
+# .config/etc/greetd/config.toml hash: {{ include "private_dot_config/etc/greetd/config.toml.tmpl" | sha256sum }}
 echo "Setting up greetd ..."
 sudo cp ~/.config/etc/greetd/config.toml /etc/greetd/config.toml
 
