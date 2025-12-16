@@ -91,6 +91,10 @@ done
 echo "Installing some tools locally ..."
 cargo install clipboard-sync
 
+# Use gnome-keyring-daemon as agent
+echo "Enable gnome-keyring-daemon ..."
+systemctl --user enable gnome-keyring-daemon.service
+
 # Copy our greetd config from home to the system wide locatin
 # .config/etc/greetd/config.toml hash: {{ include "private_dot_config/etc/greetd/config.toml.tmpl" | sha256sum }}
 echo "Setting up greetd ..."
