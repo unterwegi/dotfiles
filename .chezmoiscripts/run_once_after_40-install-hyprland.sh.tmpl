@@ -43,6 +43,7 @@ done
 {{ else if (eq .chezmoi.osRelease.id "fedora") -}}
 # Install packages - Fedora
 packages+=(
+  gcr                           # ssh-agent
   Thunar                        # file manager
   tuigreet                      # console greeter for greetd
 )
@@ -72,6 +73,7 @@ done
 {{ else if (eq .chezmoi.osRelease.id "arch" "endeavouros") -}}
 # Install packages - Arch/EndeavourOS
 packages+=(
+  gcr-4                         # ssh-agent
   thunar                        # file manager
   greetd-tuigreet               # console greeter for greetd
 )
@@ -92,9 +94,9 @@ done
 echo "Installing some tools locally ..."
 cargo install clipboard-sync
 
-# Use gnome-keyring-daemon as agent
-echo "Enable gnome-keyring-daemon ..."
-systemctl --user enable gnome-keyring-daemon.service
+# Enable gcr-ssh-agent
+echo "Enable gcr-ssh-agent ..."
+systemctl --user enable gcr-ssh-agent.socket
 
 echo "Enable hyprdynamicmonitors-prepare service ..."
 systemctl --user enable hyprdynamicmonitors-prepare.service
