@@ -7,6 +7,7 @@ The setup scripts are aware of the following Linux flavors:
 - [Arch](https://archlinux.org/)
 - [Debian](https://www.debian.org/)
 - [EndeavourOS](https://endeavouros.com/)
+- [Fedora Workstation](https://fedoraproject.org/workstation/)
 - [Ubuntu](https://ubuntu.com/) (Mainly inside a WSL2 setup)
 
 ## Bootstrap

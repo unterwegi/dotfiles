@@ -35,7 +35,6 @@ packages+=(
   libbz2-dev
   libreadline-dev
   libsqlite3-dev
-  curl
   libncursesw5-dev
   xz-utils
   tk-dev
@@ -88,7 +87,51 @@ for package in ${packages[@]}; do
 {{- if ne .chezmoi.username "root" }}
     sudo apt install -y $package
 {{- else }}
-    apt install -y ${packages[@]}
+    apt install -y $package
+{{- end }}
+  fi
+done
+
+{{ else if (eq .chezmoi.osRelease.id "fedora") -}}
+# Install necessary packages - Fedora
+
+packages+=(
+  golang
+  pipx
+  python3
+  python3-pip
+  cmake
+  make
+  automake
+  gcc
+  gcc-c++
+  openssl-devel
+  zlib-ng-devel
+  readline-devel
+  sqlite-devel
+  ncurses-devel
+  xz
+  xz-devel
+  tk-devel
+  libxml2-devel
+  xmlsec1-devel
+  libffi-devel
+)
+
+# ensure the repo index is up-to-date
+{{- if ne .chezmoi.username "root" }}
+sudo dnf update
+{{- else }}
+dnf update
+{{- end }}
+
+for package in ${packages[@]}; do
+  if ! $(rpm -q $package &> /dev/null); then
+    echo "installing $package"
+{{- if ne .chezmoi.username "root" }}
+    sudo dnf install -y $package
+{{- else }}
+    dnf install -y $package
 {{- end }}
   fi
 done
