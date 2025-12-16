@@ -1,0 +1,7 @@
+[terminal]
+vt = 2
+
+# The default session, also known as the greeter.
+[default_session]
+command = "tuigreet --cmd /usr/bin/Hyprland"
+user = "greeter"

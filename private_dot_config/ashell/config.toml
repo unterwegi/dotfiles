@@ -28,3 +28,4 @@ workspace_colors = [ "#719cd6", "#719cd6" ]
 base = "#f7768e"
 weak = "#e0af68"
 
+[settings]
