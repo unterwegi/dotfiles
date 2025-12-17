@@ -1,11 +1,11 @@
 # left prompt
 set -g tide_left_prompt_items vi_mode os pwd git newline character
-set -g tide_left_prompt_suffix 
-set -g tide_left_prompt_separator_diff_color 
+set -g tide_left_prompt_suffix 
+set -g tide_left_prompt_separator_diff_color 
 
 # right prompt
-set -g tide_right_prompt_prefix 
-set -g tide_right_prompt_separator_diff_color 
+set -g tide_right_prompt_prefix 
+set -g tide_right_prompt_separator_diff_color 
 
 # general
 set -g tide_prompt_color_frame_and_connection brblack

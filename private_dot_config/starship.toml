@@ -1,8 +1,8 @@
 format = """
 $os$username$hostname\
-[](fg:blue bg:#282c34)\
+[](fg:blue bg:#282c34)\
 $directory\
-[](fg:#282c34)\
+[](fg:#282c34)\
 $status\
 $cmd_duration\
 $git_branch\
@@ -86,9 +86,9 @@ disabled = false
 format = '[$symbol $context( \($namespace\))]($style)'
 
 [character]
-success_symbol = "[  ](fg:black bg:green)[](fg:green)"
-error_symbol = "[  ](fg:black bg:green)[](fg:green)"
-vicmd_symbol = "[  ](fg:black bg:purple)[](fg:purple)"
+success_symbol = "[  ](fg:black bg:green)[](fg:green)"
+error_symbol = "[  ](fg:black bg:green)[](fg:green)"
+vicmd_symbol = "[  ](fg:black bg:purple)[](fg:purple)"
 
 # OS symbols
 [os.symbols]

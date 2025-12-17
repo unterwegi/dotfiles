@@ -37,7 +37,7 @@ return {
                 globalstatus = true,
                 icons_enabled = true,
                 theme = "nightfox",
-                section_separators = { left = "", right = "" },
+                section_separators = { left = "", right = "" },
             },
             sections = {
                 lualine_a = { "mode" },
