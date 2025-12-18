@@ -3,26 +3,27 @@ position = "Top"
 [modules]
 left = [ ["Workspaces", "MediaPlayer"] ]
 center = [ "WindowTitle" ]
-right = [ [ "Tray", "Clock", "Calendar", "Privacy", "Settings" ] ]
+right = [ [ "Tray", "Clock", "Calendar", "Settings" ] ]
 
 [[CustomModule]]
 name = "Calendar"
-icon = ""
+icon = " "
 command = "zenity --calendar --title=\"Calendar\""
+
+[workspaces]
+visibility_mode = "MonitorSpecific"
+enable_workspace_filling = false
 
 [appearance]
 font_name = "CaskaydiaCove Nerd Font"
-scale_factor = 1.25
+scale_factor = 1.15
 opacity = 0.9
 style = "Solid"
-
 primary_color = "#2b3b51"
 secondary_color = "#39506d"
 success_color = "#9ece6a"
 background_color = "#192330"
 text_color = "#dfdfe0"
-
-workspace_colors = [ "#719cd6", "#719cd6" ]
 
 [appearance.danger_color]
 base = "#f7768e"
