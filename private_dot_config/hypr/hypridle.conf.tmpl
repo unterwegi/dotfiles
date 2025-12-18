@@ -4,8 +4,10 @@ general {
     after_sleep_cmd = hyprctl dispatch dpms on  # to avoid having to press a key twice to turn on the display.
 }
 
+{{ if ne .chezmoi.hostname "normandy-linux" -}}
 listener {
     timeout = 300                                                     # 5 minutes
     on-timeout = hyprctl dispatch dpms off                            # screen off when timeout has passed
     on-resume = hyprctl dispatch dpms on && brightnessctl -r          # screen on when activity is detected after timeout has fired.
 }
+{{ end -}}
