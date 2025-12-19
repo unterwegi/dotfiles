@@ -1,0 +1,21 @@
+#!/bin/bash
+set -eufo pipefail
+
+# List of packages to install
+packages=(
+  poetry
+)
+
+echo -e "\0033[0;32m>>>>> Begin Python Package Installation <<<<<\033[0m"
+echo "Installing tools via uvx ..."
+for package in ${packages[@]}; do
+  if ! $(dpkg-query -W -f='installed' $package &> /dev/null); then
+    echo "installing $package"
+    uv tool install $package
+  fi
+done
+
+echo "Installing pyenv ..."
+curl https://pyenv.run | bash
+
+echo -e "\0033[0;32m>>>>> Finish Package Installation <<<<<\033[0m"

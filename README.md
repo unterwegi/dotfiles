@@ -71,6 +71,7 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 - [starship](https://github.com/starship/starship)
 - [stern](https://github.com/stern/stern)
 - [tree-sitter](https://github.com/tree-sitter/tree-sitter)
+- [uv](https://github.com/astral-sh/uv)
 - [vault](https://github.com/hashicorp/vault)
 - [yq](https://github.com/mikefarah/yq)
 
