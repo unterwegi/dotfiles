@@ -9,5 +9,9 @@ if command -q docker
     set -gx DOCKER_HOST "unix://$docker_socket"
 end
 
+if command -q podman
+    set -gx REGISTRY_AUTH_FILE "$HOME/.config/containers/auth.json"
+end
+
 # prefer wayland over x11 as GDK backend (helps some java applications under wayland when they use GTK)
 set -gx GDK_BACKEND "wayland,x11"
