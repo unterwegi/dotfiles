@@ -19,7 +19,7 @@ return {
                 'go',
                 'html',
                 'json',
-                'jsonc',
+                'json5',
                 'lua',
                 'make',
                 'markdown',
