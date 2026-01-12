@@ -29,7 +29,7 @@ packages:
   - name: loft-sh/devpod@v0.6.15
   - name: aws/aws-cli@2.17.24
   - name: fullstorydev/grpcurl@v1.9.3
-  - name: hashicorp/vault@v1.21.1
+  - name: hashicorp/vault@v1.21.2
   - name: tree-sitter/tree-sitter@v0.26.3
   - name: astral-sh/ruff@0.14.11
   - name: gitlab.com/gitlab-org/cli@v1.80.4
