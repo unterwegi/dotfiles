@@ -65,6 +65,7 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 - [modd](https://github.com/cortesi/modd)
 - [navi](https://github.com/denisidoro/navi)
 - [neovim](https://github.com/neovim/neovim)
+- [opencode](https://github.com/anomalyco/opencode)
 - [rclone](https://github.com/rclone/rclone)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [ruff](https://github.com/astral-sh/ruff)

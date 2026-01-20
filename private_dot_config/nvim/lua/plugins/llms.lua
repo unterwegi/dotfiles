@@ -1,5 +1,15 @@
 return {
     {
+        "OXY2DEV/markview.nvim",
+        lazy = false,
+        opts = {
+            preview = {
+                filetypes = { "markdown", "codecompanion" },
+                ignore_buftypes = {},
+            },
+        },
+    },
+    {
         "olimorris/codecompanion.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -8,16 +18,10 @@ return {
         },
         config = function()
             require("codecompanion").setup({
-                strategies = {
+                interactions = {
                     chat = {
-                        adapter = "copilot",
+                        adapter = "opencode",
                     },
-                    inline = {
-                        adapter = "copilot",
-                    },
-                    cmd = {
-                        adapter = "copilot",
-                    }
                 },
             })
             vim.g.copilot_enabled = false
