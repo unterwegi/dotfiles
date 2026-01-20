@@ -24,9 +24,19 @@ return {
         priority = 1000,
         lazy = false,
         opts = {
-            image = { enabled = true },
+            image = { enabled = true, doc = { inline = false } },
             indent = { enabled = true, animate = { enabled = false } },
             input = { enabled = true },
+        },
+    },
+    {
+        "OXY2DEV/markview.nvim",
+        lazy = false,
+        opts = {
+            preview = {
+                filetypes = { "markdown", "codecompanion" },
+                ignore_buftypes = {},
+            },
         },
     },
     {
