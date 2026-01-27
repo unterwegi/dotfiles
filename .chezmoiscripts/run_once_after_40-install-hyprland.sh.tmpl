@@ -10,7 +10,6 @@ packages=(
   grim                          # screenshots
   hyprland                      # main package
   hyprlock                      # lock screen
-  hypridle                      # idle handling
   mako                          # notifications
   hyprpolkitagent               # privilege elevation
   slurp                         # region screnshots
@@ -51,7 +50,7 @@ packages+=(
 )
 
 # add extra repos for some packages
-sudo dnf -y copr enable solopasha/hyprland
+sudo dnf -y copr enable sdegler/hyprland
 sudo dnf -y copr enable killcrb/ashell
 
 # ensure the repo index is up-to-date
@@ -102,7 +101,6 @@ systemctl --user enable gcr-ssh-agent.socket
 
 echo "Enable hyprland support services ..."
 systemctl --user enable hyprdynamicmonitors-prepare.service
-systemctl --user enable --now hypridle.service
 
 # Copy our greetd config from home to the system wide locatin
 # .config/etc/greetd/config.toml hash: {{ include "private_dot_config/etc/greetd/config.toml.tmpl" | sha256sum }}
