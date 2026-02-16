@@ -12,7 +12,7 @@ packages:
   - name: direnv/direnv@v2.37.1
   - name: mikefarah/yq@v4.52.2
   - name: kubernetes/kubectl@v1.35.0
-  - name: kubernetes-sigs/kustomize@kustomize/v5.8.0
+  - name: kubernetes-sigs/kustomize@kustomize/v5.8.1
   - name: helm/helm@v4.1.1
   - name: derailed/k9s@v0.50.18
   - name: stern/stern@v1.33.1
