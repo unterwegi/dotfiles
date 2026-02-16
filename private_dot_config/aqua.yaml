@@ -13,7 +13,7 @@ packages:
   - name: mikefarah/yq@v4.52.2
   - name: kubernetes/kubectl@v1.35.0
   - name: kubernetes-sigs/kustomize@kustomize/v5.8.0
-  - name: helm/helm@v4.1.0
+  - name: helm/helm@v4.1.1
   - name: derailed/k9s@v0.50.18
   - name: stern/stern@v1.33.1
   - name: denisidoro/navi@v2.24.0
