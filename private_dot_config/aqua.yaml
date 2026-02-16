@@ -33,5 +33,5 @@ packages:
   - name: tree-sitter/tree-sitter@v0.26.5
   - name: astral-sh/ruff@0.15.1
   - name: gitlab.com/gitlab-org/cli@v1.82.0
-  - name: astral-sh/uv@0.10.2
+  - name: astral-sh/uv@0.10.3
   - name: anomalyco/opencode@v1.1.53
