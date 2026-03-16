@@ -1,9 +1,0 @@
-[Unit]
-Description="Stream Deck Device Path"
-
-[Path]
-PathExists=/dev/streamdeck
-Unit=streamdeck.service
-
-[Install]
-WantedBy=default.target
