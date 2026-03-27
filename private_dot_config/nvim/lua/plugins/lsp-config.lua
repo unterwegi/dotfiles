@@ -157,6 +157,7 @@ return {
             -- efm (general purpose LSP to integrate some formatters)
             local prettierd = { formatCommand = 'prettierd "${INPUT}"', formatStdin = true }
             local shfmt = { formatCommand = "shfmt -i 2 -ci", formatStdin = true }
+            local ruff = { formatCommand = "ruff format -", formatStdin = true }
             -- TODO does a generic post save autocmd make more sense here for trailing whitespace removal?
             local trailing_whitespace = { formatCommand = "sed -E -e 's/[[:space:]]*$//'", formatStdin = true }
             vim.lsp.config.efm = {
@@ -170,6 +171,7 @@ return {
                         markdown = { prettierd },
                         sh = { shfmt },
                         yaml = { prettierd },
+                        python = { ruff },
                         ["="] = { trailing_whitespace },
                     }
                 }
@@ -177,26 +179,11 @@ return {
             vim.lsp.enable("efm")
 
             -- python
-            vim.lsp.config.pylsp = {
+            vim.lsp.config('ty', {
                 capabilities = capabilities,
                 on_attach = on_attach,
-                settings = {
-                    pylsp = {
-                        plugins = {
-                            ruff = {
-                                enabled = true,
-                                formatEnabled = true,
-                                format = { "E", "F", "I", "W" },
-                                lineLength = 120,
-                            },
-                            pylsp_mypy = {
-                                overrides = { "--ignore-missing-imports", true },
-                            },
-                        }
-                    }
-                }
-            }
-            vim.lsp.enable("pylsp")
+            })
+            vim.lsp.enable('ty')
 
             -- lua_ls
             vim.lsp.config.lua_ls = {

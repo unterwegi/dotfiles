@@ -1,0 +1,3 @@
+# My defaults if projects don't have any settings
+line-length = 120
+indent-width = 4

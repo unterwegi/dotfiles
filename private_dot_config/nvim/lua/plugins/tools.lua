@@ -46,7 +46,7 @@ return {
 
                     -- main language servers
                     "efm",
-                    "python-lsp-server",
+                    "ty",
                     "clangd",
 
                     -- debug servers
@@ -57,37 +57,6 @@ return {
                 auto_update = true,
                 run_on_start = false,
             }
-
-            vim.api.nvim_create_autocmd("User", {
-                pattern = "MasonToolsUpdateCompleted",
-                callback = function()
-                    -- install/update python-lsp-server plugins
-                    local pylsp_packages = { "python-lsp-ruff", "pylsp-mypy" }
-                    local pylsp_path = vim.fn.resolve(vim.fn.stdpath("data") .. "/mason/packages/python-lsp-server")
-                    local pylsp_pip = pylsp_path .. "/venv/bin/python -m pip"
-
-                    local function post_mason_setup()
-                        -- Install python-lsp plugins
-                        for _, package in ipairs(pylsp_packages) do
-                            vim.cmd(":! " .. pylsp_pip .. " install -U --disable-pip-version-check " .. package)
-                        end
-
-                        -- Ensure vale is correctly set up
-                        vim.cmd(":!vale sync")
-                    end
-
-                    local is_headless = #vim.api.nvim_list_uis() == 0
-                    if is_headless then
-                        -- we are running synchronous inside headless mode, so no async please
-                        post_mason_setup()
-                    else
-                        -- we are running interactively so run in background
-                        vim.schedule(function()
-                            post_mason_setup()
-                        end)
-                    end
-                end,
-            })
         end
     },
 }
