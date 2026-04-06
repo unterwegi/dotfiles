@@ -43,6 +43,7 @@ return {
                     "json-lsp",
                     "yaml-language-server",
                     "protols",
+                    "glsl_analyzer",
 
                     -- main language servers
                     "efm",

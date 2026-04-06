@@ -257,6 +257,13 @@ return {
                 }
             }
             vim.lsp.enable("yamlls")
+
+            -- GLSL
+            vim.lsp.config("glsl_analyzer", {
+                capabilities = capabilities,
+                on_attach = on_attach,
+            })
+            vim.lsp.enable("glsl_analyzer")
         end
     },
 }
