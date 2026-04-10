@@ -100,4 +100,4 @@ keymap.set("v", "<Leader>pp", function()
 end, { desc = "Fix document formatting for range" })
 
 -- LLMs
-keymap.set({ "n", "v" }, "<Leader>LL", ":Ollama<CR>", { desc = "Prompt Language model" })
+keymap.set({ "n", "v" }, "<Leader>ll", ":CodeCompanionActions<CR>", { desc = "CodeCompanion Actions" })
