@@ -7,5 +7,5 @@ set -eufo pipefail
 
 echo -e "\033[0;32m>>>>> Begin Setting Up Neovim <<<<<\033[0m"
 nvim --headless "+Lazy! restore" +qa
-nvim --headless -c "TSUpdateSync" -c "MasonToolsInstall" -c "quitall"
+nvim --headless -c "TSUpdate" -c "MasonToolsInstall" -c "quitall"
 echo -e "\033[0;32m>>>>> Finish Setting Up Neovim <<<<<\033[0m"
