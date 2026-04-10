@@ -157,7 +157,7 @@ return {
             -- efm (general purpose LSP to integrate some formatters)
             local prettierd = { formatCommand = 'prettierd "${INPUT}"', formatStdin = true }
             local shfmt = { formatCommand = "shfmt -i 2 -ci", formatStdin = true }
-            local ruff = { formatCommand = "ruff format -", formatStdin = true }
+            local ruff = { formatCommand = "ruff check --select E,F,I,W --fix -", formatStdin = true }
             -- TODO does a generic post save autocmd make more sense here for trailing whitespace removal?
             local trailing_whitespace = { formatCommand = "sed -E -e 's/[[:space:]]*$//'", formatStdin = true }
             vim.lsp.config.efm = {
