@@ -57,6 +57,7 @@ The following fish plugins get installed (via [fisher](https://github.com/jorgeb
 - [golangci-lint](https://github.com/golangci/golangci-lint)
 - [grpcurl](https://github.com/fullstorydev/grpcurl)
 - [helm](https://github.com/helm/helm)
+- [jd](https://github.com/josephburnett/jd)
 - [jwt-cli](https://github.com/mike-engel/jwt-cli)
 - [k9s](https://github.com/derailed/k9s)
 - [kubectl](https://github.com/kubernetes/kubectl)

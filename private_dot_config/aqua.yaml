@@ -37,3 +37,4 @@ packages:
   - name: anomalyco/opencode@v1.4.3
   - name: github/copilot-cli@v1.0.24
   - name: typst/typst@v0.14.2
+  - name: josephburnett/jd@v2.5.0
