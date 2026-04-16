@@ -10,6 +10,7 @@ return {
             "nvim-lua/plenary.nvim",
             "hrsh7th/cmp-nvim-lsp",
             "smjonas/inc-rename.nvim",
+            "creativenull/efmls-configs-nvim",
         },
         config = function()
             -- Diagnostic looks
@@ -155,9 +156,10 @@ return {
             vim.lsp.enable("clangd")
 
             -- efm (general purpose LSP to integrate some formatters)
-            local prettierd = { formatCommand = 'prettierd "${INPUT}"', formatStdin = true }
+            local prettierd = require('efmls-configs.formatters.prettier_d')
             local shfmt = { formatCommand = "shfmt -i 2 -ci", formatStdin = true }
-            local ruff = { formatCommand = "ruff check --select E,F,I,W --fix -", formatStdin = true }
+            local ruff = require('efmls-configs.formatters.ruff')
+            local ruff_sort = require('efmls-configs.formatters.ruff_sort')
             -- TODO does a generic post save autocmd make more sense here for trailing whitespace removal?
             local trailing_whitespace = { formatCommand = "sed -E -e 's/[[:space:]]*$//'", formatStdin = true }
             vim.lsp.config.efm = {
@@ -171,7 +173,7 @@ return {
                         markdown = { prettierd },
                         sh = { shfmt },
                         yaml = { prettierd },
-                        python = { ruff },
+                        python = { ruff, ruff_sort },
                         ["="] = { trailing_whitespace },
                     }
                 }
