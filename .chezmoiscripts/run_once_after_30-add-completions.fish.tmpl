@@ -17,17 +17,12 @@ for tool in chezmoi kustomize kubectl helm minikube k9s devpod
   end
 end
 
-if command -q pipenv
-  echo "setting up pipenv completion"
-  _PIPENV_COMPLETE=fish_source pipenv > $__fish_config_dir/completions/pipenv.fish
-end
-
 if command -q poetry
   echo "setting up poetry completion"
   poetry completions fish > $__fish_config_dir/completions/poetry.fish
 end
 
-if command -q poetry
+if command -q glab
   echo "setting up glab completion"
   glab completion -s fish > $__fish_config_dir/completions/glab.fish
 end
