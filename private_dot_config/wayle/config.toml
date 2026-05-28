@@ -20,7 +20,6 @@ left = [
 center = ["window-title"]
 right = [
     "systray",
-    "battery",
     "clock",
     "dashboard",
 ]
