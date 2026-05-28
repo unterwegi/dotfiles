@@ -1,0 +1,49 @@
+[general]
+font-sans = "CaskaydiaCove Nerd Font"
+font-mono = "CaskaydiaCove Nerd Font Mono"
+
+[bar]
+scale = 0.9
+bg = "bg-base"
+background-opacity = 75
+button-variant = "basic"
+button-rounding = "none"
+button-group-module-gap = 0.5
+
+[[bar.layout]]
+monitor = "*"
+show = true
+left = [
+    "hyprland-workspaces",
+    "media",
+]
+center = ["window-title"]
+right = [
+    "systray",
+    "battery",
+    "clock",
+    "dashboard",
+]
+
+[styling.palette]
+bg = "#131a24"
+surface = "#192330"
+elevated = "#212e3f"
+fg = "#cdcecf"
+fg-muted = "#71839b"
+primary = "#719cd6"
+red = "#c94f6d"
+yellow = "#dbc074"
+green = "#81b29a"
+blue = "#63cdcf"
+
+[modules.hyprland-workspaces]
+app-icons-show = true
+icon-size = 0.7
+label-size = 0.7
+
+[modules.systray]
+icon-scale = 0.8
+
+[wallpaper]
+engine-enabled = false
