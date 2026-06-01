@@ -34,7 +34,7 @@ packages:
   - name: astral-sh/ruff@0.15.14
   - name: gitlab.com/gitlab-org/cli@v1.99.0
   - name: astral-sh/uv@0.11.16
-  - name: anomalyco/opencode@v1.15.10
+  - name: anomalyco/opencode@v1.15.13
   - name: github/copilot-cli@v1.0.54
   - name: typst/typst@v0.14.2
   - name: josephburnett/jd@v2.5.0
