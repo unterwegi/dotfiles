@@ -38,4 +38,4 @@ packages:
   - name: github/copilot-cli@v1.0.82
   - name: typst/typst@v0.15.1
   - name: josephburnett/jd@v2.5.0
-  - name: openai/codex@rust-v0.147.0
+  - name: openai/codex@rust-v0.153.2
