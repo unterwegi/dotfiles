@@ -29,9 +29,4 @@ if status is-interactive
     if command -q direnv && not functions -q __direnv_export_eval
       direnv hook fish | source
     end
-
-    # always start tmux in interactive shells
-    if command -q tmux && not set -q TMUX
-        exec tmux
-    end
 end
